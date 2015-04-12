@@ -75,11 +75,26 @@ module.exports = function(app, passport) {
     });
 
     // =====================================
-    // ERROR ===============================
+    // HELP ================================
     // =====================================
-    app.get('/error', function(req, res) {
-        res.render('error.ejs', {})
+    app.get('/help', function(req, res) {
+        res.render('help.ejs', {})
     });
+
+    // =====================================
+    // SEARCH ==============================
+    // =====================================
+    app.get('/search', function(req, res) {
+        res.render('search.ejs', {})
+    });
+
+    // =====================================
+    // VIEW ================================
+    // =====================================
+    app.get('/view', function(req, res) {
+        res.render('view.ejs', {})
+    });    
+
 };
 
 // route middleware to make sure a user is logged in
