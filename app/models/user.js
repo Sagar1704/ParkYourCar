@@ -1,6 +1,5 @@
 // load the things we need
-var restful  = require('node-restful');
-var mongoose = restful.mongoose;
+var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 
 // define the schema for our user model
@@ -43,4 +42,4 @@ userSchema.methods.validPassword = function(password) {
 };
 
 // create the model for users and expose it to our app
-module.exports = restful.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);
