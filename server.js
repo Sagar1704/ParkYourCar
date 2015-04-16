@@ -5,6 +5,7 @@ var app      = express();
 var path     = require('path');
 var port     = process.env.PORT || 3000;
 var mongoose = require('mongoose');
+var compress = require('compression');
 
 var passport = require('passport');
 var flash    = require('connect-flash');
@@ -16,6 +17,9 @@ var session      = require('express-session');
 
 //Connect to the database
 var configDB = require('./config/database.js');
+
+//To use gzip compression
+app.use(compress());
 
 // configuration ===============================================================
 mongoose.connect(configDB.url); // connect to our database

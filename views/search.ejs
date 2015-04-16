@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Park Your Car</title>
+  <title>Park Your Car - Search</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -9,54 +9,92 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <img alt="Brand" src="/images/lamborgini.jpg" style="width:50px;height:50px">
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/help">Help</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Actions <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="/view">View</a></li>
-            <li class="divider"></li>
-            <li><a href="/logout">logout</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<div class="container">
-<form role="form">
-    <div class="form-group">
-	  <div class="input-group input-group-lg">
-      <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></span>
-      <input type="text" class="form-control" placeholder="Floor Name" aria-describedby="sizing-addon1">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <img alt="Brand" src="/images/lamborgini.jpg" style="width:50px;height:50px">
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/help">Help</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Actions <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/view">View</a></li>
+              <li class="divider"></li>
+              <li><a href="/logout">logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></span>
+          <input id="floor_name" name="floor_name" type="text" class="form-control" placeholder="Floor Name" aria-describedby="sizing-addon1">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></span>
+          <input id="booking_date" name="booking_date" type="date" class="form-control" placeholder="Date" aria-describedby="sizing-addon1">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></span>
+          <input id="checkin_time" name="checkin_time" type="time" class="form-control" placeholder="Date" aria-describedby="sizing-addon1">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+        </span>
+        <input id="checkout_time" name="checkout_time" type="time" class="form-control" placeholder="Date" aria-describedby="sizing-addon1">
       </div>
     </div>
-    <div class="form-group">
-      <div class="input-group input-group-lg">
-      <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></span>
-      <input type="date" class="form-control" placeholder="Date" aria-describedby="sizing-addon1">
-      </div>
-    </div>
-	<div class="form-group">
-      <div class="input-group input-group-lg">
-      <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></span>
-      <input type="time" class="form-control" placeholder="Date" aria-describedby="sizing-addon1">
-      </div>
-    </div>
-	<div class="form-group">
-      <div class="input-group input-group-lg">
-      <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></span>
-      <input type="time" class="form-control" placeholder="Date" aria-describedby="sizing-addon1">
-      </div>
-    </div>
+    <button id="searchButton" type="submit" class="btn btn-warning btn-lg">Search</button>
   </form>
 </div>
+<div id="resultDiv"></div>
 
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#searchButton').on('click', function() {
+
+      var sendInfo = {
+        floor_name : $("#floor_name").val(),
+        checkin_time : $("#booking_date").val() + ' ' + $("#checkin_time").val() + ':00',
+        checkout_time : $("#booking_date").val() + ' ' + $("#checkout_time").val() + ':00'
+      };
+
+      //alert(sendInfo.floor_name);
+
+      $.ajax({
+        type: "POST",
+        url: "http://localhost:3000/api/bookings",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify(sendInfo),
+        success: function (data, status, jqXHR) {
+          
+          $("#resultDiv").html(data[0].email);
+          //alert("Success: " + data[0].email);
+        },
+
+        error: function (jqXHR, status) {
+          alert("Error:" + jqXHR);
+        // error handler
+        }
+      });
+
+    });
+  });
+
+
+</script>
 </body>
 </html>

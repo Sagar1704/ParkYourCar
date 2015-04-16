@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var parkingLotSchema = new mongoose.Schema({
 	floor_name : String,
 	slot_number : String,
-	is_available : Boolean,
+	is_available : Boolean
 });
 
 // methods ======================
