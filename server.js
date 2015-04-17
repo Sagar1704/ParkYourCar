@@ -32,24 +32,23 @@ mongoose.connection.on('error', function (err) {
 	console.log(err);
 });
 
-
-require('./config/passport')(passport); // pass passport for configuration
-
-// set up our express application
-app.use(morgan('dev')); // log every request to the console
-app.use(cookieParser()); // read cookies (needed for auth)
-app.use(bodyParser.urlencoded({extended : true})); // get information from html forms
-app.use(bodyParser.json());
-
-//API setup
-app.use('/api', require('./app/api'));
-
 // view engine setup
 app.use(express.static(__dirname + '/public'));
 
 app.set('views', path.join(__dirname, 'views'));
 //app.engine('html', cons.swig);
 app.set('view engine', 'ejs'); // set up ejs for templating
+
+require('./config/passport')(passport); // pass passport for configuration
+
+// set up our express application
+app.use(morgan('dev')); // log every request to the console
+app.use(cookieParser()); // read cookies (needed for auth)
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended : true})); // get information from html forms
+
+//API setup
+app.use('/api', require('./app/api'));
 
 // required for passport
 app.use(session({ secret: 'parkyourcaratyourownrisk' })); // session secret

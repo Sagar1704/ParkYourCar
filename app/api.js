@@ -1,7 +1,7 @@
 var express = require('express');
 var router  = express.Router();
 var moment  = require('moment');
-var frmt    = "YYYY-MM-DD hh:mm:ss";
+var frmt    = "YYYY-MM-DDThh:mm:ss.mmZ";
 
 //Models
 var Parking_lot = require('./models/parking_lot');
@@ -17,6 +17,7 @@ router.use(function(req, res, next) {
 // test route to make sure everything is working
 // (accessed at GET http://localhost:3000/api)
 router.get('/', function(req, res) {
+	console.log('All routes API call');
     res.json({ message: 'hooray! welcome to our api!' });
 });
 
@@ -84,9 +85,9 @@ router.route('/parking_lots')
         });
     });*/
 
-//Get the avalable parking lot space searched by user
+//Get the booking data
 router.post('/bookings',
-	function(req, res, next) {
+	function(req, res) {
 		var body = req.body;
 
 		console.log("floor_name : " + body.floor_name);
@@ -94,11 +95,33 @@ router.post('/bookings',
 		console.log("checkout_time: " + body.checkout_time);
 		
 		var searchQuery = {
-        	$and : [
-        			{floor_name : {$ne : 'black'}},
-        			{floor_name : body.floor_name}
-        	]
-        };
+			$and: [
+				{floor_name : {$ne : 'black'}},
+				{floor_name : body.floor_name},
+				{$or : [ 
+					{$and : [
+						{checkin_time : {$lt : body.checkout_time}},
+						{checkout_time : {$gt : body.checkin_time}}
+					]},
+					{$and : [
+						{checkin_time : {$lt : body.checkin_time}},
+						{checkout_time : {$gt : body.checkout_time}}
+					]}
+				]
+				}
+	        ]
+        };		
+
+		/*var searchQuery = {
+			$and: [
+				{floor_name : {$ne : 'black'}},
+				{floor_name : body.floor_name},
+	        	{$or : [
+					{checkin_time : {$lt : body.checkout_time}},
+					{checkout_time : {$gt : body.checkin_time}}
+	        	]}
+	        ]
+        };*/
 
 		Booking.find(searchQuery, function(err, booking) {
             if (err) {
@@ -106,7 +129,27 @@ router.post('/bookings',
                 res.send(err);
             }
             console.log(booking);
-            res.json(booking);
+            searchQuery = {
+            	$and : [
+    				{floor_name : {$ne : 'black'}},
+    				{floor_name : body.floor_name}
+        		],
+        		slot_number : {$nin : booking},
+        		is_available : true
+            };
+
+            Parking_lot.find(searchQuery, {_id : 0 }, function(err, parking_lot) {
+            	if (err) {
+            		console.log(err);
+                	res.send(err);
+            	}
+	            console.log(parking_lot);
+	            res.render('search', 
+	            	{
+	            		title : "Search Results",
+	            		parking_lots : parking_lot
+	            	});
+	        });
         });
 
 		/*res.json({

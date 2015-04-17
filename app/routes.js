@@ -1,5 +1,5 @@
 module.exports = function(app, passport) {
-    var api = require('./api');
+    //var api = require('./api');
 
     // =====================================
     // HOME PAGE (with login links) ========
@@ -86,14 +86,14 @@ module.exports = function(app, passport) {
     // SEARCH ==============================
     // =====================================
     app.get('/search', isLoggedIn, function(req, res) {
-        res.render('search.ejs', {})
+        console.log('Search GET called');
+        res.render('search.ejs', {});
     });
 
-    /*app.post('/search', isLoggedIn, passport.authenticate('local-search', {
-        successRedirect : '/profile', // redirect to the secure profile section
-        failureRedirect : '/login', // redirect back to the signup page if there is an error
-        failureFlash : true // allow flash messages
-    })); */   
+    /*app.post('/search', isLoggedIn, function(req, res) {
+        console.log('Search POST called');
+        res.render('search.ejs', {});
+    });*/
 
     // =====================================
     // VIEW ================================

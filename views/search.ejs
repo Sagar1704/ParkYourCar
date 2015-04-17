@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 </head>
 <body>
   <nav class="navbar navbar-default">
@@ -56,7 +57,7 @@
         <input id="checkout_time" name="checkout_time" type="time" class="form-control" placeholder="Date" aria-describedby="sizing-addon1">
       </div>
     </div>
-    <button id="searchButton" type="submit" class="btn btn-warning btn-lg">Search</button>
+    <button id="searchButton" class="btn btn-warning btn-lg">Search</button>
   </form>
 </div>
 <div id="resultDiv"></div>
@@ -67,11 +68,11 @@
 
       var sendInfo = {
         floor_name : $("#floor_name").val(),
-        checkin_time : $("#booking_date").val() + ' ' + $("#checkin_time").val() + ':00',
-        checkout_time : $("#booking_date").val() + ' ' + $("#checkout_time").val() + ':00'
+        checkin_time : $("#booking_date").val() + 'T' + $("#checkin_time").val() + ':00.000Z',
+        checkout_time : $("#booking_date").val() + 'T' + $("#checkout_time").val() + ':00.000Z'
       };
 
-      //alert(sendInfo.floor_name);
+      alert(sendInfo.checkin_time);
 
       $.ajax({
         type: "POST",
@@ -81,20 +82,22 @@
         data: JSON.stringify(sendInfo),
         success: function (data, status, jqXHR) {
           
-          $("#resultDiv").html(data[0].email);
-          //alert("Success: " + data[0].email);
+          //$("#resultDiv").html(data[0].slot_number);
+          //alert("Success: " + data[0].slot_number);  
+          //alert("Success: " + parking_lots[0].slot_number);
         },
 
         error: function (jqXHR, status) {
-          alert("Error:" + jqXHR);
+          alert("Error:" + status);
         // error handler
         }
       });
-
+      return false;
     });
   });
 
 
 </script>
+
 </body>
 </html>
