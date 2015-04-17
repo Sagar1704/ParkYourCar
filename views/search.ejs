@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Park Your Car - Search</title>
+  <title><%= title%></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -81,8 +81,18 @@
         dataType: "json",
         data: JSON.stringify(sendInfo),
         success: function (data, status, jqXHR) {
-          
-          //$("#resultDiv").html(data[0].slot_number);
+          alert(JSON.stringify(data));
+          var temp = JSON.stringify(data);
+          //document.write(data.parking_lots.length);
+          document.write('<table><tr><th>Floor Name</th><th>slot_number</th></tr>')
+          for(index = 0; index < data.parking_lots.length; index++) {
+            document.write('<tr>')
+            document.write('<td>' + data.parking_lots[index].floor_name + '</td>');
+            document.write('<td>' + data.parking_lots[index].slot_number + '</td>');
+            document.write('</tr>')
+          }
+          document.write('</table>');
+          //$("#resultDiv").html(data.parking_lots[0].slot_number);
           //alert("Success: " + data[0].slot_number);  
           //alert("Success: " + parking_lots[0].slot_number);
         },
@@ -98,6 +108,5 @@
 
 
 </script>
-
 </body>
 </html>

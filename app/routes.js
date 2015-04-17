@@ -87,7 +87,7 @@ module.exports = function(app, passport) {
     // =====================================
     app.get('/search', isLoggedIn, function(req, res) {
         console.log('Search GET called');
-        res.render('search.ejs', {});
+        res.render('search.ejs', {title : "Park Your Car - Search"});
     });
 
     /*app.post('/search', isLoggedIn, function(req, res) {

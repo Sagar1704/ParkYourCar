@@ -110,31 +110,29 @@ router.post('/bookings',
 				]
 				}
 	        ]
-        };		
+        };
 
-		/*var searchQuery = {
-			$and: [
-				{floor_name : {$ne : 'black'}},
-				{floor_name : body.floor_name},
-	        	{$or : [
-					{checkin_time : {$lt : body.checkout_time}},
-					{checkout_time : {$gt : body.checkin_time}}
-	        	]}
-	        ]
-        };*/
-
-		Booking.find(searchQuery, function(err, booking) {
+		Booking.find(searchQuery, {_id : 0, slot_number : 1}, function(err, booking) {
             if (err) {
             	console.log(err);
                 res.send(err);
             }
             console.log(booking);
+
+            var bookedSlots = new Array();
+            console.log('booking length:: ' + booking.length);
+        	for (var i = 0; i < booking.length; i++) {
+        		bookedSlots.push(booking[i].slot_number);
+     		}
+
+     		console.log(bookedSlots);
+
             searchQuery = {
             	$and : [
     				{floor_name : {$ne : 'black'}},
     				{floor_name : body.floor_name}
         		],
-        		slot_number : {$nin : booking},
+        		slot_number : {$nin : bookedSlots},
         		is_available : true
             };
 
@@ -144,8 +142,9 @@ router.post('/bookings',
                 	res.send(err);
             	}
 	            console.log(parking_lot);
-	            res.render('search', 
+	            res.json( 
 	            	{
+	            		status: 200,
 	            		title : "Search Results",
 	            		parking_lots : parking_lot
 	            	});
