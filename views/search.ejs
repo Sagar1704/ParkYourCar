@@ -63,6 +63,8 @@
 <div class='table-responsive' id="resultDiv"></div>
 
 <script type="text/javascript">
+  var selectedFloor = "";
+  var selectedSlot = "";
   $(document).ready(function() {
     $('#searchButton').on('click', function() {
 
@@ -78,63 +80,65 @@
 
       $.ajax({
         type: "POST",
-        url: "http://localhost:3000/api/bookings",
+        url: "http://localhost:3000/api/search",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         data: JSON.stringify(sendInfo),
         success: function (data, status, jqXHR) {
           alert(JSON.stringify(data));
-          var resultData = "<table><tr><th>Floor Name</th><th>Slot Number</th></tr>";
+          var resultData = "<table id='slotsTable'><tr><th></th><th>Floor Name</th><th>Slot Number</th></tr>";
           for(index = 0; index < data.parking_lots.length; index++) {
-            resultData += '<tr><td>' + data.parking_lots[index].floor_name + '</td><td>' + data.parking_lots[index].slot_number + '</td></tr>';
+            resultData += "<tr><td><input type='radio' value='lot" + index + "' name='lot'/></td><td class='floors'>" + data.parking_lots[index].floor_name + "</td><td class='slots'>" + data.parking_lots[index].slot_number + "</td></tr>";
           }
 
-          resultData += "</table>";
+//          $("#slotsTable").addClass("table table-bordered table-striped table-condensed table-hover table-even-widths");
+
+          $(document).on('DOMNodeInserted', function(e) { $(e.target).addClass("table table-bordered table-striped table-condensed table-hover table-even-widths"); });
+          resultData += "</table><button id='bookButton' class='btn btn-warning btn-lg' onclick='book()'>Book</button>";
 
           bookingTable.html(resultData);
-
-          //$.redirect('http://localhost:3000/searchResult', JSON.stringify(data));
-          //window.location ="http://localhost:3000/searchResult";
-          //var temp = JSON.stringify(data);
-
-          /*$.ajax({
-            type: "POST",
-            url: "http://localhost:3000/api/searchResult",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            data: JSON.stringify(data),
-            success: function (data, status, jqXHR) {
-            // do something
-            },
-
-            error: function (jqXHR, status) {
-            // error handler
-            }
-          });*/
-
-          /*document.write(data.parking_lots.length);
-          document.write('<table><tr><th>Floor Name</th><th>slot_number</th></tr>')
-          for(index = 0; index < data.parking_lots.length; index++) {
-            document.write('<tr>')
-            document.write('<td>' + data.parking_lots[index].floor_name + '</td>');
-            document.write('<td>' + data.parking_lots[index].slot_number + '</td>');
-            document.write('</tr>')
-          }
-          document.write('</table>');*/
-          //$("#resultDiv").html(data.parking_lots[0].slot_number);
-          //alert("Success: " + data[0].slot_number);  
-          //alert("Success: " + parking_lots[0].slot_number);
         },
 
         error: function (jqXHR, status) {
           alert("Error:" + status);
-        // error handler
         }
       });
       return false;
     });
+
   });
 
+  // Call booking service
+  function book() {
+    selectedFloor = $('input[name="lot"]:checked').parents('tr').find('td.floors').text();
+    selectedSlot = $('input[name="lot"]:checked').parents('tr').find('td.slots').text();
+
+    var sendInfo = {
+      //Currently hard-coded
+      email : 'akshay1thakare@gmail.com',
+      floor_name : selectedFloor,
+      slot_number : selectedSlot,
+      checkin_time : $("#booking_date").val() + 'T' + $("#checkin_time").val() + ':00.000Z',
+        checkout_time : $("#booking_date").val() + 'T' + $("#checkout_time").val() + ':00.000Z' 
+    };
+
+    alert(selectedFloor + "----" + selectedSlot);
+
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:3000/api/book",
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      data: JSON.stringify(sendInfo),
+      success: function (data, status, jqXHR) {
+        alert("Success:" + status);
+      },
+
+      error: function (jqXHR, status) {
+        alert("Error:" + status);
+      }
+    });
+  }
 
 </script>
 </body>

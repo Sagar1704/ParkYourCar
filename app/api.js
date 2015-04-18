@@ -85,8 +85,8 @@ router.route('/parking_lots')
         });
     });*/
 
-//Get the booking data
-router.post('/bookings',
+//Get the available slots based on the user search
+router.post('/search',
 	function(req, res) {
 		var body = req.body;
 
@@ -195,5 +195,24 @@ router.post('/bookings',
 		res.render('/searchResult', req.body)
 	}
 );*/
+
+//Book the available slot
+router.post('/book',
+	function(req, res) {
+		var body = req.body;
+
+		console.log("email : " + body.email);
+		console.log("floor_name : " + body.floor_name);
+		console.log("slot_number : " + body.slot_number);
+		console.log("checkin_time: " + body.checkin_time);
+		console.log("checkout_time: " + body.checkout_time);
+
+		
+		res.json(
+        	{
+        		status: 200
+        	});
+	}
+);
 
 module.exports = router;
