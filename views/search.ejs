@@ -91,8 +91,6 @@
             resultData += "<tr><td><input type='radio' value='lot" + index + "' name='lot'/></td><td class='floors'>" + data.parking_lots[index].floor_name + "</td><td class='slots'>" + data.parking_lots[index].slot_number + "</td></tr>";
           }
 
-//          $("#slotsTable").addClass("table table-bordered table-striped table-condensed table-hover table-even-widths");
-
           $(document).on('DOMNodeInserted', function(e) { $(e.target).addClass("table table-bordered table-striped table-condensed table-hover table-even-widths"); });
           resultData += "</table><button id='bookButton' class='btn btn-warning btn-lg' onclick='book()'>Book</button>";
 
@@ -131,7 +129,7 @@
       dataType: "json",
       data: JSON.stringify(sendInfo),
       success: function (data, status, jqXHR) {
-        alert("Success:" + status);
+        window.location ="http://localhost:3000/profile";
       },
 
       error: function (jqXHR, status) {
