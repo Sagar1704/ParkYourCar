@@ -21,70 +21,6 @@ router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });
 });
 
-/*
-router.route('/parking_lots')
-
-    // create a parking_lot (accessed at POST http://localhost:3000/api/parking_lots)
-    .post(function(req, res) {
-        
-        // create a new instance of the parking_lot model
-        var parking_lot = new Parking_lot();
-
-        // set the parking_lots name (comes from the request)
-        parking_lot.floor_name = req.body.floor_name;
-        parking_lot.slot_number = req.body.slot_number;
-        parking_lot.is_available = req.body.is_available;
-
-        // save the parking_lot and check for errors
-        parking_lot.save(function(err) {
-            if (err)
-                res.send(err);
-
-            res.json({ message: 'Bear created!' });
-        });
-        
-    });
-
-	// get all the parking_lots
-	// (accessed at GET http://localhost:3000/api/parking_lots)
-    .get(function(req, res, next) {
-        Parking_lot.find(function(err, parking_lots) {
-            if (err)
-                res.send(err);
-
-            res.json(parking_lots);
-        });
-    });
-*/
-
-/*router.route('/parking_lots/:lot_id')
-
-    // get the parking_lot with specific id
-    // (accessed at GET http://localhost:3000/api/parking_lots/:_id)
-    .get(function(req, res, next) {
-        Parking_lot.findById(req.params.lot_id, function(err, parking_lot) {
-            if (err)
-                res.send(err);
-            res.json(parking_lot);
-        });
-    });*/
-
-
-/*router.route('/parking_lots/:floor_name')
-
-    // get the parking_lot with specific floor_name
-    // (accessed at GET http://localhost:3000/api/parking_lots/:floor_name)
-    .get(function(req, res, next) {
-        Parking_lot.find(
-        	{
-        		floor_name : req.params.floor_name 
-        	}, function(err, parking_lot) {
-	            if (err)
-	                res.send(err);
-	            res.json(parking_lot);
-        });
-    });*/
-
 //Get the available slots based on the user search
 router.post('/search',
 	function(req, res) {
@@ -154,21 +90,21 @@ router.post('/search',
 	            	});
 	        });
         });
-	});
+	}
+);
 
 //Book the available slot
 router.post('/book',
 	function(req, res) {
 		var body = req.body;
-		console.log("Session User : " + req.user);
-		console.log("email : " + body.email);
-		console.log("floor_name : " + body.floor_name);
-		console.log("slot_number : " + body.slot_number);
-		console.log("checkin_time: " + body.checkin_time);
-		console.log("checkout_time: " + body.checkout_time);
+		console.log("email : " + body.email.trim());
+		// console.log("floor_name : " + body.floor_name);
+		// console.log("slot_number : " + body.slot_number);
+		// console.log("checkin_time: " + body.checkin_time);
+		// console.log("checkout_time: " + body.checkout_time);
 
 		var insertQuery = {
-			email : body.email,
+			email : body.email.trim(),
 			floor_name : body.floor_name,
 			slot_number : body.slot_number,
 			checkin_time : body.checkin_time,
@@ -187,6 +123,43 @@ router.post('/book',
         	});
 		});
 	}
+);
+
+//View booked slots
+router.post('/view',
+    function(req, res) {
+        var body = req.body;
+
+        console.log("email : " + body.email.trim());
+        
+        //Query to search in the booking table
+        var searchQuery = {
+            email : body.email.trim()
+        };
+
+        var columns = {
+            _id : 0,
+            floor_name : 1,
+            slot_number : 1,
+            checkin_time : 1,
+            checkout_time :1
+        };
+
+        //Get the bookings
+        Booking.find(searchQuery, columns, function(err, booking) {
+            if (err) {
+                console.log(err);
+                res.send(err);
+            }
+            console.log(booking);
+
+            res.json(
+            {
+                status: 200,
+                bookings : booking
+            });
+        });
+    }
 );
 
 module.exports = router;

@@ -17,13 +17,13 @@
 </head>
 <body>
   <div id='userEmail' style="display: none;"><% if(user.local.email) {%>
-        <%=user.local.email%>
+      <%=user.local.email%>
       <%} else if(user.facebook.email) {%>
         <%=user.facebook.email%>
       <%} else {%>
         <%=user.google.email%>
       <%}
-    %></div>
+  %></div>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -131,7 +131,7 @@
       floor_name : selectedFloor,
       slot_number : selectedSlot,
       checkin_time : $("#booking_date").val() + 'T' + $("#checkin_time").val() + ':00.000Z',
-        checkout_time : $("#booking_date").val() + 'T' + $("#checkout_time").val() + ':00.000Z' 
+      checkout_time : $("#booking_date").val() + 'T' + $("#checkout_time").val() + ':00.000Z' 
     };
 
     alert(selectedFloor + "----" + selectedSlot);
