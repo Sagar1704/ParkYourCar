@@ -8,8 +8,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <style>
+    td {
+      padding : 10px;
+      border-collapse: collapse;
+    }
+  </style>
 </head>
 <body>
+  <div id='userEmail' style="display: none;"><% if(user.local.email) {%>
+        <%=user.local.email%>
+      <%} else if(user.facebook.email) {%>
+        <%=user.facebook.email%>
+      <%} else {%>
+        <%=user.google.email%>
+      <%}
+    %></div>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -111,9 +125,9 @@
     selectedFloor = $('input[name="lot"]:checked').parents('tr').find('td.floors').text();
     selectedSlot = $('input[name="lot"]:checked').parents('tr').find('td.slots').text();
 
+    alert(document.getElementById('userEmail').innerHTML);
     var sendInfo = {
-      //Currently hard-coded
-      email : 'akshay1thakare@gmail.com',
+      email : document.getElementById('userEmail').innerHTML,
       floor_name : selectedFloor,
       slot_number : selectedSlot,
       checkin_time : $("#booking_date").val() + 'T' + $("#checkin_time").val() + ':00.000Z',

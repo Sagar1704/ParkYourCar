@@ -160,7 +160,7 @@ router.post('/search',
 router.post('/book',
 	function(req, res) {
 		var body = req.body;
-
+		console.log("Session User : " + req.user);
 		console.log("email : " + body.email);
 		console.log("floor_name : " + body.floor_name);
 		console.log("slot_number : " + body.slot_number);

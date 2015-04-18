@@ -6,6 +6,14 @@ var path     = require('path');
 var port     = process.env.PORT || 3000;
 var mongoose = require('mongoose');
 var compress = require('compression');
+var http     = require('http');
+var https    = require('https');
+var fs       = require('fs');
+
+var options = {
+    key: fs.readFileSync('parkyourcar.key'),
+    cert: fs.readFileSync('parkyourcar.crt')
+};
 
 var passport = require('passport');
 var flash    = require('connect-flash');
@@ -13,7 +21,8 @@ var flash    = require('connect-flash');
 var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
-var session      = require('express-session');
+//var session      = require('express-session');
+var session      = require('client-sessions');
 
 //Connect to the database
 var configDB = require('./config/database.js');
@@ -51,7 +60,13 @@ app.use(bodyParser.urlencoded({extended : true})); // get information from html 
 app.use('/api', require('./app/api'));
 
 // required for passport
-app.use(session({ secret: 'parkyourcaratyourownrisk' })); // session secret
+app.use(session({
+					cookieName : 'session',
+					secret: 'parkyourcaratyourownrisk',
+					duration : 30 * 60 * 1000,
+					activeDuration : 5 * 60 * 1000
+				})); // session secret
+
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -73,5 +88,7 @@ app.use(function(error, req, res, next) {
 });
 
 // launch ======================================================================
-app.listen(port);
+//app.listen(port);
+http.createServer(app).listen(3000);
+https.createServer(options, app).listen(3001);
 console.log('The magic happens on port ' + port);
