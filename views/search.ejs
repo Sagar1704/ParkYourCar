@@ -60,7 +60,7 @@
     <button id="searchButton" class="btn btn-warning btn-lg">Search</button>
   </form>
 </div>
-<div id="resultDiv"></div>
+<div class='table-responsive' id="resultDiv"></div>
 
 <script type="text/javascript">
   $(document).ready(function() {
@@ -72,7 +72,9 @@
         checkout_time : $("#booking_date").val() + 'T' + $("#checkout_time").val() + ':00.000Z'
       };
 
-      alert(sendInfo.checkin_time);
+      //alert(sendInfo.checkin_time);
+
+      var bookingTable = $("#resultDiv");
 
       $.ajax({
         type: "POST",
@@ -82,8 +84,35 @@
         data: JSON.stringify(sendInfo),
         success: function (data, status, jqXHR) {
           alert(JSON.stringify(data));
-          var temp = JSON.stringify(data);
-          //document.write(data.parking_lots.length);
+          var resultData = "<table><tr><th>Floor Name</th><th>Slot Number</th></tr>";
+          for(index = 0; index < data.parking_lots.length; index++) {
+            resultData += '<tr><td>' + data.parking_lots[index].floor_name + '</td><td>' + data.parking_lots[index].slot_number + '</td></tr>';
+          }
+
+          resultData += "</table>";
+
+          bookingTable.html(resultData);
+
+          //$.redirect('http://localhost:3000/searchResult', JSON.stringify(data));
+          //window.location ="http://localhost:3000/searchResult";
+          //var temp = JSON.stringify(data);
+
+          /*$.ajax({
+            type: "POST",
+            url: "http://localhost:3000/api/searchResult",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(data),
+            success: function (data, status, jqXHR) {
+            // do something
+            },
+
+            error: function (jqXHR, status) {
+            // error handler
+            }
+          });*/
+
+          /*document.write(data.parking_lots.length);
           document.write('<table><tr><th>Floor Name</th><th>slot_number</th></tr>')
           for(index = 0; index < data.parking_lots.length; index++) {
             document.write('<tr>')
@@ -91,7 +120,7 @@
             document.write('<td>' + data.parking_lots[index].slot_number + '</td>');
             document.write('</tr>')
           }
-          document.write('</table>');
+          document.write('</table>');*/
           //$("#resultDiv").html(data.parking_lots[0].slot_number);
           //alert("Success: " + data[0].slot_number);  
           //alert("Success: " + parking_lots[0].slot_number);

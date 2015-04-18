@@ -142,7 +142,7 @@ router.post('/bookings',
                 	res.send(err);
             	}
 	            console.log(parking_lot);
-	            res.json( 
+	            res.json(
 	            	{
 	            		status: 200,
 	            		title : "Search Results",
@@ -189,5 +189,11 @@ router.post('/bookings',
             res.json(parking_lot);
         });
     });*/
+
+/*router.post('/searchResult',
+	function(req, res) {
+		res.render('/searchResult', req.body)
+	}
+);*/
 
 module.exports = router;

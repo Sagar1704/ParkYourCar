@@ -90,6 +90,11 @@ module.exports = function(app, passport) {
         res.render('search.ejs', {title : "Park Your Car - Search"});
     });
 
+    app.get('/searchResult', isLoggedIn, function(req, res) {
+        console.log('Search Result GET called');
+        res.render('searchResult.ejs', {title : "Park Your Car - Search Result"});
+    });
+
     /*app.post('/search', isLoggedIn, function(req, res) {
         console.log('Search POST called');
         res.render('search.ejs', {});
