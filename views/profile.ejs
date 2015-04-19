@@ -158,8 +158,8 @@
                   alert(JSON.stringify(data));
                   var resultData = "<table id='slotsTable'><tr><th></th><th>Floor Name</th><th>Slot Number</th><th>Checkin Time</th><th>Checkout Time</th></tr>";
                   for(index = 0; index < data.bookings.length; index++) {
-                    resultData += "<tr><td><input type='button' value='lot" + index + "' name='lot'/></td><td class='floors'>" + data.bookings[index].floor_name + "</td><td class='slots'>" + data.bookings[index].slot_number + "</td><td class='checkin'>" + data.bookings[index].checkin_time + "</td><td class='checkout'>" + data.bookings[index].checkout_time + "</td></tr>";
-                }
+                    resultData += "<tr><td><input class='cancelButton' type='button' value='lot" + index + "' name='lot'/></td><td class='floors'>" + data.bookings[index].floor_name + "</td><td class='slots'>" + data.bookings[index].slot_number + "</td><td class='checkin'>" + data.bookings[index].checkin_time + "</td><td class='checkout'>" + data.bookings[index].checkout_time + "</td></tr>";
+                    }
 
                 $(document).on('DOMNodeInserted', function(e) { $(e.target).addClass("table table-bordered table-striped table-condensed table-hover table-even-widths"); });
                 resultData += "</table>";
@@ -172,6 +172,35 @@
           }
       });
 });
+
+    $(document).on("click", ".cancelButton", 
+        function() {
+            // $(this).parent().parent().remove();
+            var sendInfo = {
+                email : document.getElementById('userEmail').innerHTML,
+                floor_name : $(this).parents('tr').find('td.floors').text(),
+                slot_number : $(this).parents('tr').find('td.slots').text(),
+                checkin_time : $(this).parents('tr').find('td.checkin').text(),
+                checkout_time : $(this).parents('tr').find('td.checkout').text()
+            };
+
+            $.ajax({
+                type: "DELETE",
+                url: "http://localhost:3000/api/cancel",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(sendInfo),
+                success: function (data, status, jqXHR) {
+                  window.location ="http://localhost:3000/profile";
+                },
+
+                error: function (jqXHR, status) {
+                  alert("Error:" + status);
+                }
+            });
+        }
+    );
+
 });
 </script>
 </body>

@@ -162,4 +162,39 @@ router.post('/view',
     }
 );
 
+//Cancel booking
+router.delete('/cancel',
+    function(req, res) {
+        var body = req.body;
+
+        console.log("email : " + body.email.trim());
+        // console.log("floor_name : " + body.floor_name);
+        // console.log("slot_number : " + body.slot_number);
+        // console.log("checkin_time: " + body.checkin_time);
+        // console.log("checkout_time: " + body.checkout_time);
+
+        //Query to search in the booking table
+        var searchQuery = {
+            email : body.email.trim(),
+            floor_name : body.floor_name,
+            slot_number : body.slot_number,
+            checkin_time : body.checkin_time,
+            checkout_time : body.checkout_time
+        };
+
+        //Get the bookings and remove
+        Booking.find(searchQuery).remove(function(err) {
+            if (err) {
+                console.log(err);
+                res.send(err);
+            }
+
+            res.json(
+            {
+                status: 200
+            });
+        });
+    }
+);
+
 module.exports = router;
