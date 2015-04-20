@@ -125,7 +125,7 @@
     selectedFloor = $('input[name="lot"]:checked').parents('tr').find('td.floors').text();
     selectedSlot = $('input[name="lot"]:checked').parents('tr').find('td.slots').text();
 
-    alert(document.getElementById('userEmail').innerHTML);
+    // alert(document.getElementById('userEmail').innerHTML);
     var sendInfo = {
       email : document.getElementById('userEmail').innerHTML,
       floor_name : selectedFloor,
@@ -134,7 +134,7 @@
       checkout_time : $("#booking_date").val() + 'T' + $("#checkout_time").val() + ':00.000Z' 
     };
 
-    alert(selectedFloor + "----" + selectedSlot);
+    // alert(selectedFloor + "----" + selectedSlot);
 
     $.ajax({
       type: "POST",

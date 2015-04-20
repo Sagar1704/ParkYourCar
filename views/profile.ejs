@@ -136,6 +136,7 @@
 <script> 
     $(document).ready(function(){
         $(".row").hide();
+        $(".table-responsive").hide();
         $("#b1").click(function(){
             $(".row").slideToggle("slow");
         });
@@ -155,7 +156,7 @@
                 dataType: "json",
                 data: JSON.stringify(sendInfo),
                 success: function (data, status, jqXHR) {
-                  alert(JSON.stringify(data));
+                  // alert(JSON.stringify(data));
                   var resultData = "<table id='slotsTable'><tr><th></th><th>Floor Name</th><th>Slot Number</th><th>Checkin Time</th><th>Checkout Time</th></tr>";
                   for(index = 0; index < data.bookings.length; index++) {
                     resultData += "<tr><td><input class='cancelButton' type='button' value='lot" + index + "' name='lot'/></td><td class='floors'>" + data.bookings[index].floor_name + "</td><td class='slots'>" + data.bookings[index].slot_number + "</td><td class='checkin'>" + data.bookings[index].checkin_time + "</td><td class='checkout'>" + data.bookings[index].checkout_time + "</td></tr>";

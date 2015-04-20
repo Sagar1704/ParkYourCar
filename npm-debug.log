@@ -1,0 +1,1300 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'memcached' ]
+2 info using npm@2.5.1
+3 info using node@v0.12.1
+4 warn package.json node-authentication@ No description
+5 warn package.json node-authentication@ No repository field.
+6 warn package.json node-authentication@ No README data
+7 warn package.json https@1.0.0 https is also the name of a node core module.
+8 warn package.json https@1.0.0 No repository field.
+9 warn package.json https@1.0.0 No README data
+10 warn package.json http@0.0.0 http is also the name of a node core module.
+11 warn package.json http@0.0.0 No description
+12 warn package.json http@0.0.0 No repository field.
+13 warn package.json http@0.0.0 No README data
+14 warn package.json path@0.11.14 path is also the name of a node core module.
+15 silly cache add args [ 'memcached', null ]
+16 verbose cache add spec memcached
+17 silly cache add parsed spec { raw: 'memcached',
+17 silly cache add   scope: null,
+17 silly cache add   name: 'memcached',
+17 silly cache add   rawSpec: '',
+17 silly cache add   spec: '*',
+17 silly cache add   type: 'range' }
+18 verbose addNamed memcached@*
+19 silly addNamed semver.valid null
+20 silly addNamed semver.validRange *
+21 silly addNameRange { name: 'memcached', range: '*', hasData: false }
+22 silly mapToRegistry name memcached
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry uri https://registry.npmjs.org/memcached
+26 verbose addNameRange registry:https://registry.npmjs.org/memcached not in flight; fetching
+27 verbose request uri https://registry.npmjs.org/memcached
+28 verbose request no auth needed
+29 info attempt registry request try #1 at 5:47:45 PM
+30 verbose request id a954cd4b80793474
+31 verbose etag "C7MSJITO2Y89RT23QM1BLWLSS"
+32 http request GET https://registry.npmjs.org/memcached
+33 http 304 https://registry.npmjs.org/memcached
+34 silly get cb [ 304,
+34 silly get   { date: 'Mon, 20 Apr 2015 22:46:03 GMT',
+34 silly get     via: '1.1 varnish',
+34 silly get     'last-modified': 'Mon, 20 Apr 2015 22:46:03 GMT',
+34 silly get     'cache-control': 'max-age=60',
+34 silly get     etag: '"C7MSJITO2Y89RT23QM1BLWLSS"',
+34 silly get     age: '0',
+34 silly get     connection: 'keep-alive',
+34 silly get     'x-served-by': 'cache-ord1722-ORD',
+34 silly get     'x-cache': 'HIT',
+34 silly get     'x-cache-hits': '1',
+34 silly get     'x-timer': 'S1429569963.759803,VS0,VE162',
+34 silly get     vary: 'Accept' } ]
+35 verbose etag https://registry.npmjs.org/memcached from cache
+36 verbose get saving memcached to C:\Users\Sagar\AppData\Roaming\npm-cache\registry.npmjs.org\memcached\.cache.json
+37 silly addNameRange number 2 { name: 'memcached', range: '*', hasData: true }
+38 silly addNameRange versions [ 'memcached',
+38 silly addNameRange   [ '0.0.1',
+38 silly addNameRange     '0.0.2',
+38 silly addNameRange     '0.0.3',
+38 silly addNameRange     '0.0.4',
+38 silly addNameRange     '0.0.5',
+38 silly addNameRange     '0.1.0',
+38 silly addNameRange     '0.1.1',
+38 silly addNameRange     '0.1.2',
+38 silly addNameRange     '0.1.3',
+38 silly addNameRange     '0.1.4',
+38 silly addNameRange     '0.1.5',
+38 silly addNameRange     '0.2.0',
+38 silly addNameRange     '0.0.7',
+38 silly addNameRange     '0.0.6',
+38 silly addNameRange     '0.0.8',
+38 silly addNameRange     '0.0.9',
+38 silly addNameRange     '0.0.10',
+38 silly addNameRange     '0.0.11',
+38 silly addNameRange     '0.0.12',
+38 silly addNameRange     '0.2.1',
+38 silly addNameRange     '0.2.2',
+38 silly addNameRange     '0.2.3',
+38 silly addNameRange     '0.2.4',
+38 silly addNameRange     '0.2.5',
+38 silly addNameRange     '0.2.6',
+38 silly addNameRange     '0.2.7',
+38 silly addNameRange     '0.2.8',
+38 silly addNameRange     '1.0.0',
+38 silly addNameRange     '2.0.0',
+38 silly addNameRange     '2.1.0' ] ]
+39 verbose addNamed memcached@2.1.0
+40 silly addNamed semver.valid 2.1.0
+41 silly addNamed semver.validRange 2.1.0
+42 silly cache afterAdd memcached@2.1.0
+43 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\memcached\2.1.0\package\package.json not in flight; writing
+44 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\memcached\2.1.0\package\package.json written
+45 silly install resolved [ { name: 'memcached',
+45 silly install resolved     version: '2.1.0',
+45 silly install resolved     author: { name: 'Arnout Kazemier' },
+45 silly install resolved     description: 'A fully featured Memcached API client, supporting both single and clustered Memcached servers through consistent hashing and failover/failure. Memcached is rewrite of nMemcached, which will be deprecated in the near future.',
+45 silly install resolved     main: 'index',
+45 silly install resolved     keywords:
+45 silly install resolved      [ 'InnoDB memcached API',
+45 silly install resolved        'cache',
+45 silly install resolved        'client',
+45 silly install resolved        'cluster',
+45 silly install resolved        'failover',
+45 silly install resolved        'hashing',
+45 silly install resolved        'membase',
+45 silly install resolved        'memcache',
+45 silly install resolved        'memcached',
+45 silly install resolved        'nMemcached',
+45 silly install resolved        'nosql' ],
+45 silly install resolved     license: 'MIT',
+45 silly install resolved     repository:
+45 silly install resolved      { type: 'git',
+45 silly install resolved        url: 'http://github.com/3rd-Eden/node-memcached.git' },
+45 silly install resolved     dependencies: { hashring: '3.1.x', jackpot: '>=0.0.6' },
+45 silly install resolved     devDependencies: { mocha: '*', should: '*', 'pre-commit': '*' },
+45 silly install resolved     scripts: { test: 'mocha $(find test -name \'*.test.js\')' },
+45 silly install resolved     gitHead: '9b6878b8c79e09e63b003bef20c5aeb8137d3820',
+45 silly install resolved     bugs: { url: 'https://github.com/3rd-Eden/node-memcached/issues' },
+45 silly install resolved     homepage: 'https://github.com/3rd-Eden/node-memcached',
+45 silly install resolved     _id: 'memcached@2.1.0',
+45 silly install resolved     _shasum: 'f4a77dbb60dc250d64ef22d947f23624aea16ff9',
+45 silly install resolved     _from: 'memcached@*',
+45 silly install resolved     _npmVersion: '1.4.28',
+45 silly install resolved     _npmUser: { name: 'V1', email: 'info@3rd-Eden.com' },
+45 silly install resolved     maintainers: [ [Object], [Object] ],
+45 silly install resolved     dist:
+45 silly install resolved      { shasum: 'f4a77dbb60dc250d64ef22d947f23624aea16ff9',
+45 silly install resolved        tarball: 'http://registry.npmjs.org/memcached/-/memcached-2.1.0.tgz' },
+45 silly install resolved     directories: {},
+45 silly install resolved     _resolved: 'https://registry.npmjs.org/memcached/-/memcached-2.1.0.tgz',
+45 silly install resolved     readme: 'ERROR: No README data found!' } ]
+46 info install memcached@2.1.0 into c:\parkyourcar
+47 info installOne memcached@2.1.0
+48 verbose installOne of memcached to c:\parkyourcar not in flight; installing
+49 verbose lock using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\memcached-80c9270bc66ee484.lock for c:\parkyourcar\node_modules\memcached
+50 silly install write writing memcached 2.1.0 to c:\parkyourcar\node_modules\memcached
+51 silly cache addNamed cb memcached@2.1.0
+52 verbose unbuild node_modules\memcached
+53 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached
+54 verbose tar unpack C:\Users\Sagar\AppData\Roaming\npm-cache\memcached\2.1.0\package.tgz
+55 verbose tar unpacking to c:\parkyourcar\node_modules\memcached
+56 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached
+57 silly gunzTarPerm modes [ '777', '666' ]
+58 silly gunzTarPerm extractEntry package.json
+59 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+60 silly gunzTarPerm extractEntry .npmignore
+61 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+62 silly gunzTarPerm extractEntry README.md
+63 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+64 silly gunzTarPerm extractEntry LICENSE
+65 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+66 silly gunzTarPerm extractEntry index.js
+67 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+68 silly gunzTarPerm extractEntry examples/simple_version.js
+69 silly gunzTarPerm modified mode [ 'examples/simple_version.js', 420, 438 ]
+70 silly gunzTarPerm extractEntry examples/simple_flush.js
+71 silly gunzTarPerm modified mode [ 'examples/simple_flush.js', 420, 438 ]
+72 silly gunzTarPerm extractEntry examples/simple_get.js
+73 silly gunzTarPerm modified mode [ 'examples/simple_get.js', 420, 438 ]
+74 silly gunzTarPerm extractEntry examples/simple_get_binary.js
+75 silly gunzTarPerm modified mode [ 'examples/simple_get_binary.js', 420, 438 ]
+76 silly gunzTarPerm extractEntry examples/simple_get_compression.js
+77 silly gunzTarPerm modified mode [ 'examples/simple_get_compression.js', 420, 438 ]
+78 silly gunzTarPerm extractEntry examples/simple_events.js
+79 silly gunzTarPerm modified mode [ 'examples/simple_events.js', 420, 438 ]
+80 silly gunzTarPerm extractEntry examples/simple_get_largefile.js
+81 silly gunzTarPerm modified mode [ 'examples/simple_get_largefile.js', 420, 438 ]
+82 silly gunzTarPerm extractEntry examples/simple_getmulti.js
+83 silly gunzTarPerm modified mode [ 'examples/simple_getmulti.js', 420, 438 ]
+84 silly gunzTarPerm extractEntry examples/simple_gets.js
+85 silly gunzTarPerm modified mode [ 'examples/simple_gets.js', 420, 438 ]
+86 silly gunzTarPerm extractEntry examples/simple_incr.js
+87 silly gunzTarPerm modified mode [ 'examples/simple_incr.js', 420, 438 ]
+88 silly gunzTarPerm extractEntry examples/simple_items.js
+89 silly gunzTarPerm modified mode [ 'examples/simple_items.js', 420, 438 ]
+90 silly gunzTarPerm extractEntry examples/simple_delete.js
+91 silly gunzTarPerm modified mode [ 'examples/simple_delete.js', 420, 438 ]
+92 silly gunzTarPerm extractEntry examples/simple_metaData.js
+93 silly gunzTarPerm modified mode [ 'examples/simple_metaData.js', 420, 438 ]
+94 silly gunzTarPerm extractEntry examples/simple_decr.js
+95 silly gunzTarPerm modified mode [ 'examples/simple_decr.js', 420, 438 ]
+96 silly gunzTarPerm extractEntry examples/simple_redundancy.js
+97 silly gunzTarPerm modified mode [ 'examples/simple_redundancy.js', 420, 438 ]
+98 silly gunzTarPerm extractEntry examples/simple_cas.js
+99 silly gunzTarPerm modified mode [ 'examples/simple_cas.js', 420, 438 ]
+100 silly gunzTarPerm extractEntry examples/simple_set.js
+101 silly gunzTarPerm modified mode [ 'examples/simple_set.js', 420, 438 ]
+102 silly gunzTarPerm extractEntry examples/simple_cachedump.js
+103 silly gunzTarPerm modified mode [ 'examples/simple_cachedump.js', 420, 438 ]
+104 silly gunzTarPerm extractEntry examples/simple_set_binary.js
+105 silly gunzTarPerm modified mode [ 'examples/simple_set_binary.js', 420, 438 ]
+106 silly gunzTarPerm extractEntry examples/queue_limit.js
+107 silly gunzTarPerm modified mode [ 'examples/queue_limit.js', 420, 438 ]
+108 silly gunzTarPerm extractEntry examples/simple_set_compression.js
+109 silly gunzTarPerm modified mode [ 'examples/simple_set_compression.js', 420, 438 ]
+110 silly gunzTarPerm extractEntry examples/memcached_local_config.js
+111 silly gunzTarPerm modified mode [ 'examples/memcached_local_config.js', 420, 438 ]
+112 silly gunzTarPerm extractEntry examples/simple_set_json.js
+113 silly gunzTarPerm modified mode [ 'examples/simple_set_json.js', 420, 438 ]
+114 silly gunzTarPerm extractEntry examples/memcached_global_config.js
+115 silly gunzTarPerm modified mode [ 'examples/memcached_global_config.js', 420, 438 ]
+116 silly gunzTarPerm extractEntry examples/simple_set_largefile.js
+117 silly gunzTarPerm modified mode [ 'examples/simple_set_largefile.js', 420, 438 ]
+118 silly gunzTarPerm extractEntry examples/memcached_connect_socket.js
+119 silly gunzTarPerm modified mode [ 'examples/memcached_connect_socket.js', 420, 438 ]
+120 silly gunzTarPerm extractEntry examples/simple_settings.js
+121 silly gunzTarPerm modified mode [ 'examples/simple_settings.js', 420, 438 ]
+122 silly gunzTarPerm extractEntry examples/memcached_connect.js
+123 silly gunzTarPerm modified mode [ 'examples/memcached_connect.js', 420, 438 ]
+124 silly gunzTarPerm extractEntry examples/simple_slabs.js
+125 silly gunzTarPerm modified mode [ 'examples/simple_slabs.js', 420, 438 ]
+126 silly gunzTarPerm extractEntry examples/consistent_hashing.js
+127 silly gunzTarPerm modified mode [ 'examples/consistent_hashing.js', 420, 438 ]
+128 silly gunzTarPerm extractEntry examples/simple_stats.js
+129 silly gunzTarPerm modified mode [ 'examples/simple_stats.js', 420, 438 ]
+130 silly gunzTarPerm extractEntry examples/cluster_memcached_connect.js
+131 silly gunzTarPerm modified mode [ 'examples/cluster_memcached_connect.js', 420, 438 ]
+132 silly gunzTarPerm extractEntry examples/simple_get_json.js
+133 silly gunzTarPerm modified mode [ 'examples/simple_get_json.js', 420, 438 ]
+134 silly gunzTarPerm extractEntry examples/binary/hotchicks.jpg
+135 silly gunzTarPerm modified mode [ 'examples/binary/hotchicks.jpg', 420, 438 ]
+136 silly gunzTarPerm extractEntry examples/binary/lipsum.txt
+137 silly gunzTarPerm modified mode [ 'examples/binary/lipsum.txt', 420, 438 ]
+138 silly gunzTarPerm extractEntry benchmarks/README.md
+139 silly gunzTarPerm modified mode [ 'benchmarks/README.md', 420, 438 ]
+140 silly gunzTarPerm extractEntry benchmarks/benchmark.js
+141 silly gunzTarPerm modified mode [ 'benchmarks/benchmark.js', 420, 438 ]
+142 silly gunzTarPerm extractEntry .travis.yml
+143 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+144 silly gunzTarPerm extractEntry issues/1/index.js
+145 silly gunzTarPerm modified mode [ 'issues/1/index.js', 420, 438 ]
+146 silly gunzTarPerm extractEntry issues/1/bash.sh
+147 silly gunzTarPerm modified mode [ 'issues/1/bash.sh', 493, 511 ]
+148 silly gunzTarPerm extractEntry issues/1/test.sh
+149 silly gunzTarPerm modified mode [ 'issues/1/test.sh', 493, 511 ]
+150 silly gunzTarPerm extractEntry lib/connection.js
+151 silly gunzTarPerm modified mode [ 'lib/connection.js', 420, 438 ]
+152 silly gunzTarPerm extractEntry lib/memcached.js
+153 silly gunzTarPerm modified mode [ 'lib/memcached.js', 420, 438 ]
+154 silly gunzTarPerm extractEntry lib/utils.js
+155 silly gunzTarPerm modified mode [ 'lib/utils.js', 420, 438 ]
+156 silly gunzTarPerm extractEntry TODO
+157 silly gunzTarPerm modified mode [ 'TODO', 420, 438 ]
+158 silly gunzTarPerm extractEntry test/common.js
+159 silly gunzTarPerm modified mode [ 'test/common.js', 420, 438 ]
+160 silly gunzTarPerm extractEntry test/memcached-add.test.js
+161 silly gunzTarPerm modified mode [ 'test/memcached-add.test.js', 420, 438 ]
+162 silly gunzTarPerm extractEntry test/memcached-cas.test.js
+163 silly gunzTarPerm modified mode [ 'test/memcached-cas.test.js', 420, 438 ]
+164 silly gunzTarPerm extractEntry test/memcached-connections.test.js
+165 silly gunzTarPerm modified mode [ 'test/memcached-connections.test.js', 420, 438 ]
+166 silly gunzTarPerm extractEntry test/memcached-touch.test.js
+167 silly gunzTarPerm modified mode [ 'test/memcached-touch.test.js', 420, 438 ]
+168 silly gunzTarPerm extractEntry test/memcached-incr-decr.test.js
+169 silly gunzTarPerm modified mode [ 'test/memcached-incr-decr.test.js', 420, 438 ]
+170 silly gunzTarPerm extractEntry test/memcached-namespace.test.js
+171 silly gunzTarPerm modified mode [ 'test/memcached-namespace.test.js', 420, 438 ]
+172 silly gunzTarPerm extractEntry test/memcached-parser.test.js
+173 silly gunzTarPerm modified mode [ 'test/memcached-parser.test.js', 420, 438 ]
+174 silly gunzTarPerm extractEntry test/memcached-get-set.test.js
+175 silly gunzTarPerm modified mode [ 'test/memcached-get-set.test.js', 420, 438 ]
+176 silly gunzTarPerm extractEntry test/fixtures/hotchicks.jpg
+177 silly gunzTarPerm modified mode [ 'test/fixtures/hotchicks.jpg', 420, 438 ]
+178 silly gunzTarPerm extractEntry test/fixtures/lipsum.txt
+179 silly gunzTarPerm modified mode [ 'test/fixtures/lipsum.txt', 420, 438 ]
+180 silly gunzTarPerm extractEntry test/mocha.opts
+181 silly gunzTarPerm modified mode [ 'test/mocha.opts', 420, 438 ]
+182 info preinstall memcached@2.1.0
+183 silly prepareForInstallMany adding hashring@3.1.x from memcached dependencies
+184 silly prepareForInstallMany adding jackpot@>=0.0.6 from memcached dependencies
+185 silly cache add args [ 'hashring@3.1.x', null ]
+186 verbose cache add spec hashring@3.1.x
+187 silly cache add args [ 'jackpot@>=0.0.6', null ]
+188 verbose cache add spec jackpot@>=0.0.6
+189 silly cache add parsed spec { raw: 'hashring@3.1.x',
+189 silly cache add   scope: null,
+189 silly cache add   name: 'hashring',
+189 silly cache add   rawSpec: '3.1.x',
+189 silly cache add   spec: '>=3.1.0 <3.2.0',
+189 silly cache add   type: 'range' }
+190 verbose addNamed hashring@>=3.1.0 <3.2.0
+191 silly addNamed semver.valid null
+192 silly addNamed semver.validRange >=3.1.0 <3.2.0
+193 silly addNameRange { name: 'hashring', range: '>=3.1.0 <3.2.0', hasData: false }
+194 silly mapToRegistry name hashring
+195 silly mapToRegistry using default registry
+196 silly mapToRegistry registry https://registry.npmjs.org/
+197 silly mapToRegistry uri https://registry.npmjs.org/hashring
+198 verbose addNameRange registry:https://registry.npmjs.org/hashring not in flight; fetching
+199 silly cache add parsed spec { raw: 'jackpot@>=0.0.6',
+199 silly cache add   scope: null,
+199 silly cache add   name: 'jackpot',
+199 silly cache add   rawSpec: '>=0.0.6',
+199 silly cache add   spec: '>=0.0.6',
+199 silly cache add   type: 'range' }
+200 verbose addNamed jackpot@>=0.0.6
+201 silly addNamed semver.valid null
+202 silly addNamed semver.validRange >=0.0.6
+203 silly addNameRange { name: 'jackpot', range: '>=0.0.6', hasData: false }
+204 silly mapToRegistry name jackpot
+205 silly mapToRegistry using default registry
+206 silly mapToRegistry registry https://registry.npmjs.org/
+207 silly mapToRegistry uri https://registry.npmjs.org/jackpot
+208 verbose addNameRange registry:https://registry.npmjs.org/jackpot not in flight; fetching
+209 verbose request uri https://registry.npmjs.org/hashring
+210 verbose request no auth needed
+211 info attempt registry request try #1 at 5:47:49 PM
+212 verbose etag "BN0MXV2HB9S5P5U4GWB7NGDD"
+213 http request GET https://registry.npmjs.org/hashring
+214 verbose request uri https://registry.npmjs.org/jackpot
+215 verbose request no auth needed
+216 info attempt registry request try #1 at 5:47:49 PM
+217 verbose etag "3A9GL0CXM19DXGMAZ5AW2EB80"
+218 http request GET https://registry.npmjs.org/jackpot
+219 http 304 https://registry.npmjs.org/jackpot
+220 silly get cb [ 304,
+220 silly get   { date: 'Mon, 20 Apr 2015 22:46:06 GMT',
+220 silly get     via: '1.1 varnish',
+220 silly get     'last-modified': 'Mon, 20 Apr 2015 22:46:06 GMT',
+220 silly get     'cache-control': 'max-age=60',
+220 silly get     etag: '"3A9GL0CXM19DXGMAZ5AW2EB80"',
+220 silly get     age: '0',
+220 silly get     connection: 'keep-alive',
+220 silly get     'x-served-by': 'cache-ord1726-ORD',
+220 silly get     'x-cache': 'MISS',
+220 silly get     'x-cache-hits': '0',
+220 silly get     'x-timer': 'S1429569966.205984,VS0,VE40',
+220 silly get     vary: 'Accept' } ]
+221 verbose etag https://registry.npmjs.org/jackpot from cache
+222 verbose get saving jackpot to C:\Users\Sagar\AppData\Roaming\npm-cache\registry.npmjs.org\jackpot\.cache.json
+223 silly addNameRange number 2 { name: 'jackpot', range: '>=0.0.6', hasData: true }
+224 silly addNameRange versions [ 'jackpot',
+224 silly addNameRange   [ '0.0.0', '0.0.1', '0.0.2', '0.0.3', '0.0.4', '0.0.5', '0.0.6' ] ]
+225 verbose addNamed jackpot@0.0.6
+226 silly addNamed semver.valid 0.0.6
+227 silly addNamed semver.validRange 0.0.6
+228 http 304 https://registry.npmjs.org/hashring
+229 silly get cb [ 304,
+229 silly get   { date: 'Mon, 20 Apr 2015 22:46:06 GMT',
+229 silly get     via: '1.1 varnish',
+229 silly get     'last-modified': 'Mon, 20 Apr 2015 22:46:06 GMT',
+229 silly get     'cache-control': 'max-age=60',
+229 silly get     etag: '"BN0MXV2HB9S5P5U4GWB7NGDD"',
+229 silly get     age: '0',
+229 silly get     connection: 'keep-alive',
+229 silly get     'x-served-by': 'cache-ord1728-ORD',
+229 silly get     'x-cache': 'MISS',
+229 silly get     'x-cache-hits': '0',
+229 silly get     'x-timer': 'S1429569966.202683,VS0,VE65',
+229 silly get     vary: 'Accept' } ]
+230 verbose etag https://registry.npmjs.org/hashring from cache
+231 verbose get saving hashring to C:\Users\Sagar\AppData\Roaming\npm-cache\registry.npmjs.org\hashring\.cache.json
+232 silly cache afterAdd jackpot@0.0.6
+233 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\jackpot\0.0.6\package\package.json not in flight; writing
+234 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\jackpot\0.0.6\package\package.json written
+235 silly addNameRange number 2 { name: 'hashring', range: '>=3.1.0 <3.2.0', hasData: true }
+236 silly addNameRange versions [ 'hashring',
+236 silly addNameRange   [ '0.0.1',
+236 silly addNameRange     '0.0.2',
+236 silly addNameRange     '0.0.3',
+236 silly addNameRange     '0.0.4',
+236 silly addNameRange     '0.0.5',
+236 silly addNameRange     '0.0.6',
+236 silly addNameRange     '0.0.7',
+236 silly addNameRange     '0.0.8',
+236 silly addNameRange     '1.0.0',
+236 silly addNameRange     '1.0.1',
+236 silly addNameRange     '1.0.2',
+236 silly addNameRange     '1.0.3',
+236 silly addNameRange     '2.0.0',
+236 silly addNameRange     '2.0.1',
+236 silly addNameRange     '2.0.2',
+236 silly addNameRange     '3.0.0',
+236 silly addNameRange     '3.1.0' ] ]
+237 verbose addNamed hashring@3.1.0
+238 silly addNamed semver.valid 3.1.0
+239 silly addNamed semver.validRange 3.1.0
+240 silly cache afterAdd hashring@3.1.0
+241 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\hashring\3.1.0\package\package.json not in flight; writing
+242 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\hashring\3.1.0\package\package.json written
+243 silly install resolved [ { author:
+243 silly install resolved      { name: 'Arnout Kazemier',
+243 silly install resolved        email: 'info@3rd-Eden.com',
+243 silly install resolved        url: 'http://3rd-Eden.com' },
+243 silly install resolved     name: 'jackpot',
+243 silly install resolved     description: 'Jackpot, TCP connection pooling for Node.js',
+243 silly install resolved     version: '0.0.6',
+243 silly install resolved     homepage: 'https://github.com/3rd-Eden/jackpot',
+243 silly install resolved     main: 'index.js',
+243 silly install resolved     keywords: [ 'pool', 'connection', 'connection pool', 'tcp' ],
+243 silly install resolved     repository: { type: 'git', url: 'git://github.com/3rd-Eden/jackpot.git' },
+243 silly install resolved     scripts: { test: 'make test' },
+243 silly install resolved     dependencies: { retry: '0.6.0' },
+243 silly install resolved     devDependencies: { mocha: '1.2.1', chai: '1.1.0', 'pre-commit': '0.0.x' },
+243 silly install resolved     bugs: { url: 'https://github.com/3rd-Eden/jackpot/issues' },
+243 silly install resolved     _id: 'jackpot@0.0.6',
+243 silly install resolved     dist:
+243 silly install resolved      { shasum: '3cff064285cbf66f4eab2593c90bce816a821849',
+243 silly install resolved        tarball: 'http://registry.npmjs.org/jackpot/-/jackpot-0.0.6.tgz' },
+243 silly install resolved     _from: 'jackpot@>=0.0.6',
+243 silly install resolved     _npmVersion: '1.3.4',
+243 silly install resolved     _npmUser: { name: 'V1', email: 'info@3rd-Eden.com' },
+243 silly install resolved     maintainers: [ [Object] ],
+243 silly install resolved     directories: {},
+243 silly install resolved     _shasum: '3cff064285cbf66f4eab2593c90bce816a821849',
+243 silly install resolved     _resolved: 'https://registry.npmjs.org/jackpot/-/jackpot-0.0.6.tgz',
+243 silly install resolved     readme: 'ERROR: No README data found!' },
+243 silly install resolved   { name: 'hashring',
+243 silly install resolved     version: '3.1.0',
+243 silly install resolved     author: { name: 'Arnout Kazemier' },
+243 silly install resolved     description: 'A consistent hashring compatible with ketama hashing and python\'s hash_ring',
+243 silly install resolved     main: './index.js',
+243 silly install resolved     keywords:
+243 silly install resolved      [ 'hashring',
+243 silly install resolved        'hash ring',
+243 silly install resolved        'hashing',
+243 silly install resolved        'hashvalue',
+243 silly install resolved        'ketama',
+243 silly install resolved        'hash_ring',
+243 silly install resolved        'hash',
+243 silly install resolved        'consistent hashing',
+243 silly install resolved        'libketama' ],
+243 silly install resolved     license: 'MIT',
+243 silly install resolved     bugs: { url: 'http://github.com/3rd-Eden/node-hashring/issues' },
+243 silly install resolved     homepage: 'http://github.com/3rd-Eden/node-hashring/',
+243 silly install resolved     repository:
+243 silly install resolved      { type: 'git',
+243 silly install resolved        url: 'http://github.com/3rd-Eden/node-hashring.git' },
+243 silly install resolved     dependencies:
+243 silly install resolved      { bindings: '1.2.x',
+243 silly install resolved        'connection-parse': '0.0.x',
+243 silly install resolved        nan: '1.5.x',
+243 silly install resolved        'simple-lru-cache': '0.0.x' },
+243 silly install resolved     devDependencies:
+243 silly install resolved      { assume: '0.0.x',
+243 silly install resolved        benchmark: '1.0.x',
+243 silly install resolved        devnull: '0.0.x',
+243 silly install resolved        istanbul: '0.3.x',
+243 silly install resolved        mocha: '2.1.x',
+243 silly install resolved        'pre-commit': '0.0.x' },
+243 silly install resolved     scripts:
+243 silly install resolved      { '100%': 'istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100',
+243 silly install resolved        test: 'mocha tests/api.test.js tests/distribution.test.js',
+243 silly install resolved        watch: 'mocha --watch tests/api.test.js tests/distribution.test.js',
+243 silly install resolved        coverage: 'istanbul cover ./node_modules/.bin/_mocha -- tests/api.test.js tests/distribution.test.js',
+243 silly install resolved        'test-travis': 'istanbul cover node_modules/.bin/_mocha --report lcovonly -- tests/api.test.js tests/distribution.test.js',
+243 silly install resolved        install: 'node-gyp rebuild' },
+243 silly install resolved     gypfile: true,
+243 silly install resolved     gitHead: '47ca4fc5da2543022a0cb1b767afd0a5696fabf0',
+243 silly install resolved     _id: 'hashring@3.1.0',
+243 silly install resolved     _shasum: 'f315f99f281d9ef0292ca7abe50aa8f4ef7f8aad',
+243 silly install resolved     _from: 'hashring@>=3.1.0 <3.2.0',
+243 silly install resolved     _npmVersion: '1.4.28',
+243 silly install resolved     _npmUser: { name: 'V1', email: 'info@3rd-Eden.com' },
+243 silly install resolved     maintainers: [ [Object] ],
+243 silly install resolved     dist:
+243 silly install resolved      { shasum: 'f315f99f281d9ef0292ca7abe50aa8f4ef7f8aad',
+243 silly install resolved        tarball: 'http://registry.npmjs.org/hashring/-/hashring-3.1.0.tgz' },
+243 silly install resolved     directories: {},
+243 silly install resolved     _resolved: 'https://registry.npmjs.org/hashring/-/hashring-3.1.0.tgz',
+243 silly install resolved     readme: 'ERROR: No README data found!' } ]
+244 info install jackpot@0.0.6 into c:\parkyourcar\node_modules\memcached
+245 info install hashring@3.1.0 into c:\parkyourcar\node_modules\memcached
+246 info installOne jackpot@0.0.6
+247 verbose installOne of jackpot to c:\parkyourcar\node_modules\memcached not in flight; installing
+248 info installOne hashring@3.1.0
+249 verbose installOne of hashring to c:\parkyourcar\node_modules\memcached not in flight; installing
+250 verbose lock using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\jackpot-aa551adbfcc4c7e8.lock for c:\parkyourcar\node_modules\memcached\node_modules\jackpot
+251 silly install write writing jackpot 0.0.6 to c:\parkyourcar\node_modules\memcached\node_modules\jackpot
+252 silly cache addNamed cb jackpot@0.0.6
+253 verbose unbuild node_modules\memcached\node_modules\jackpot
+254 verbose lock using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\hashring-a046cfaaa5351b48.lock for c:\parkyourcar\node_modules\memcached\node_modules\hashring
+255 silly install write writing hashring 3.1.0 to c:\parkyourcar\node_modules\memcached\node_modules\hashring
+256 silly cache addNamed cb hashring@3.1.0
+257 verbose unbuild node_modules\memcached\node_modules\hashring
+258 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\jackpot
+259 verbose tar unpack C:\Users\Sagar\AppData\Roaming\npm-cache\jackpot\0.0.6\package.tgz
+260 verbose tar unpacking to c:\parkyourcar\node_modules\memcached\node_modules\jackpot
+261 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\jackpot
+262 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\hashring
+263 silly gunzTarPerm modes [ '777', '666' ]
+264 verbose tar unpack C:\Users\Sagar\AppData\Roaming\npm-cache\hashring\3.1.0\package.tgz
+265 verbose tar unpacking to c:\parkyourcar\node_modules\memcached\node_modules\hashring
+266 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\hashring
+267 silly gunzTarPerm modes [ '777', '666' ]
+268 silly gunzTarPerm extractEntry package.json
+269 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+270 silly gunzTarPerm extractEntry package.json
+271 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+272 silly gunzTarPerm extractEntry .npmignore
+273 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+274 silly gunzTarPerm extractEntry README.md
+275 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+276 silly gunzTarPerm extractEntry .npmignore
+277 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+278 silly gunzTarPerm extractEntry README.md
+279 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+280 silly gunzTarPerm extractEntry index.js
+281 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+282 silly gunzTarPerm extractEntry ms.js
+283 silly gunzTarPerm modified mode [ 'ms.js', 420, 438 ]
+284 silly gunzTarPerm extractEntry .travis.yml
+285 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+286 silly gunzTarPerm extractEntry CHANGELOG.md
+287 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 420, 438 ]
+288 silly gunzTarPerm extractEntry Makefile
+289 silly gunzTarPerm modified mode [ 'Makefile', 420, 438 ]
+290 silly gunzTarPerm extractEntry test/common.js
+291 silly gunzTarPerm modified mode [ 'test/common.js', 420, 438 ]
+292 silly gunzTarPerm extractEntry test/jackpot.test.js
+293 silly gunzTarPerm modified mode [ 'test/jackpot.test.js', 420, 438 ]
+294 silly gunzTarPerm extractEntry test/mocha.opts
+295 silly gunzTarPerm modified mode [ 'test/mocha.opts', 420, 438 ]
+296 silly gunzTarPerm extractEntry LICENSE
+297 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+298 silly gunzTarPerm extractEntry index.js
+299 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+300 silly gunzTarPerm extractEntry binding.gyp
+301 silly gunzTarPerm modified mode [ 'binding.gyp', 420, 438 ]
+302 silly gunzTarPerm extractEntry .travis.yml
+303 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+304 silly gunzTarPerm extractEntry benchmarks/benchmark.js
+305 silly gunzTarPerm modified mode [ 'benchmarks/benchmark.js', 420, 438 ]
+306 silly gunzTarPerm extractEntry benchmarks/methods.js
+307 silly gunzTarPerm modified mode [ 'benchmarks/methods.js', 420, 438 ]
+308 silly gunzTarPerm extractEntry CHANGELOG
+309 silly gunzTarPerm modified mode [ 'CHANGELOG', 420, 438 ]
+310 silly gunzTarPerm extractEntry doc/index.html
+311 silly gunzTarPerm modified mode [ 'doc/index.html', 420, 438 ]
+312 silly gunzTarPerm extractEntry src/hashvalue.cc
+313 silly gunzTarPerm modified mode [ 'src/hashvalue.cc', 420, 438 ]
+314 silly gunzTarPerm extractEntry src/hashvalue.h
+315 silly gunzTarPerm modified mode [ 'src/hashvalue.h', 420, 438 ]
+316 silly gunzTarPerm extractEntry Makefile
+317 silly gunzTarPerm modified mode [ 'Makefile', 420, 438 ]
+318 silly gunzTarPerm extractEntry tests/api.test.js
+319 silly gunzTarPerm modified mode [ 'tests/api.test.js', 420, 438 ]
+320 silly gunzTarPerm extractEntry tests/distribution.test.js
+321 silly gunzTarPerm modified mode [ 'tests/distribution.test.js', 420, 438 ]
+322 silly gunzTarPerm extractEntry tests/fixtures/hash_ring.py
+323 silly gunzTarPerm modified mode [ 'tests/fixtures/hash_ring.py', 420, 438 ]
+324 silly gunzTarPerm extractEntry tests/fixtures/hash_ring.txt
+325 silly gunzTarPerm modified mode [ 'tests/fixtures/hash_ring.txt', 420, 438 ]
+326 silly gunzTarPerm extractEntry tests/fixtures/ketama.py
+327 silly gunzTarPerm modified mode [ 'tests/fixtures/ketama.py', 420, 438 ]
+328 silly gunzTarPerm extractEntry tests/fixtures/ketama.txt
+329 silly gunzTarPerm modified mode [ 'tests/fixtures/ketama.txt', 420, 438 ]
+330 info preinstall jackpot@0.0.6
+331 silly prepareForInstallMany adding retry@0.6.0 from jackpot dependencies
+332 silly cache add args [ 'retry@0.6.0', null ]
+333 verbose cache add spec retry@0.6.0
+334 silly cache add parsed spec { raw: 'retry@0.6.0',
+334 silly cache add   scope: null,
+334 silly cache add   name: 'retry',
+334 silly cache add   rawSpec: '0.6.0',
+334 silly cache add   spec: '0.6.0',
+334 silly cache add   type: 'version' }
+335 verbose addNamed retry@0.6.0
+336 silly addNamed semver.valid 0.6.0
+337 silly addNamed semver.validRange 0.6.0
+338 silly mapToRegistry name retry
+339 silly mapToRegistry using default registry
+340 silly mapToRegistry registry https://registry.npmjs.org/
+341 silly mapToRegistry uri https://registry.npmjs.org/retry
+342 verbose addNameVersion registry:https://registry.npmjs.org/retry not in flight; fetching
+343 verbose request uri https://registry.npmjs.org/retry
+344 verbose request no auth needed
+345 info attempt registry request try #1 at 5:47:50 PM
+346 verbose etag "9E8IFDN9W1BFA3G0NIW4E0BT6"
+347 http request GET https://registry.npmjs.org/retry
+348 silly gunzTarPerm extractEntry tests/fixtures/libmemcached.json
+349 silly gunzTarPerm modified mode [ 'tests/fixtures/libmemcached.json', 420, 438 ]
+350 silly gunzTarPerm extractEntry tests/fixtures/pylibmc.txt
+351 silly gunzTarPerm modified mode [ 'tests/fixtures/pylibmc.txt', 420, 438 ]
+352 silly gunzTarPerm extractEntry tests/fixtures/test_pylibmc.py
+353 silly gunzTarPerm modified mode [ 'tests/fixtures/test_pylibmc.py', 420, 438 ]
+354 info preinstall hashring@3.1.0
+355 silly prepareForInstallMany adding bindings@1.2.x from hashring dependencies
+356 silly prepareForInstallMany adding connection-parse@0.0.x from hashring dependencies
+357 silly prepareForInstallMany adding nan@1.5.x from hashring dependencies
+358 silly prepareForInstallMany adding simple-lru-cache@0.0.x from hashring dependencies
+359 silly cache add args [ 'bindings@1.2.x', null ]
+360 verbose cache add spec bindings@1.2.x
+361 silly cache add args [ 'connection-parse@0.0.x', null ]
+362 verbose cache add spec connection-parse@0.0.x
+363 silly cache add parsed spec { raw: 'bindings@1.2.x',
+363 silly cache add   scope: null,
+363 silly cache add   name: 'bindings',
+363 silly cache add   rawSpec: '1.2.x',
+363 silly cache add   spec: '>=1.2.0 <1.3.0',
+363 silly cache add   type: 'range' }
+364 verbose addNamed bindings@>=1.2.0 <1.3.0
+365 silly addNamed semver.valid null
+366 silly addNamed semver.validRange >=1.2.0 <1.3.0
+367 silly addNameRange { name: 'bindings', range: '>=1.2.0 <1.3.0', hasData: false }
+368 silly mapToRegistry name bindings
+369 silly mapToRegistry using default registry
+370 silly mapToRegistry registry https://registry.npmjs.org/
+371 silly mapToRegistry uri https://registry.npmjs.org/bindings
+372 verbose addNameRange registry:https://registry.npmjs.org/bindings not in flight; fetching
+373 silly cache add parsed spec { raw: 'connection-parse@0.0.x',
+373 silly cache add   scope: null,
+373 silly cache add   name: 'connection-parse',
+373 silly cache add   rawSpec: '0.0.x',
+373 silly cache add   spec: '>=0.0.0 <0.1.0',
+373 silly cache add   type: 'range' }
+374 verbose addNamed connection-parse@>=0.0.0 <0.1.0
+375 silly addNamed semver.valid null
+376 silly addNamed semver.validRange >=0.0.0 <0.1.0
+377 silly addNameRange { name: 'connection-parse',
+377 silly addNameRange   range: '>=0.0.0 <0.1.0',
+377 silly addNameRange   hasData: false }
+378 silly mapToRegistry name connection-parse
+379 silly mapToRegistry using default registry
+380 silly mapToRegistry registry https://registry.npmjs.org/
+381 silly mapToRegistry uri https://registry.npmjs.org/connection-parse
+382 verbose addNameRange registry:https://registry.npmjs.org/connection-parse not in flight; fetching
+383 silly cache add args [ 'nan@1.5.x', null ]
+384 verbose cache add spec nan@1.5.x
+385 silly cache add parsed spec { raw: 'nan@1.5.x',
+385 silly cache add   scope: null,
+385 silly cache add   name: 'nan',
+385 silly cache add   rawSpec: '1.5.x',
+385 silly cache add   spec: '>=1.5.0 <1.6.0',
+385 silly cache add   type: 'range' }
+386 verbose addNamed nan@>=1.5.0 <1.6.0
+387 silly addNamed semver.valid null
+388 silly addNamed semver.validRange >=1.5.0 <1.6.0
+389 silly addNameRange { name: 'nan', range: '>=1.5.0 <1.6.0', hasData: false }
+390 silly mapToRegistry name nan
+391 silly mapToRegistry using default registry
+392 silly mapToRegistry registry https://registry.npmjs.org/
+393 silly mapToRegistry uri https://registry.npmjs.org/nan
+394 verbose addNameRange registry:https://registry.npmjs.org/nan not in flight; fetching
+395 silly cache add args [ 'simple-lru-cache@0.0.x', null ]
+396 verbose cache add spec simple-lru-cache@0.0.x
+397 silly cache add parsed spec { raw: 'simple-lru-cache@0.0.x',
+397 silly cache add   scope: null,
+397 silly cache add   name: 'simple-lru-cache',
+397 silly cache add   rawSpec: '0.0.x',
+397 silly cache add   spec: '>=0.0.0 <0.1.0',
+397 silly cache add   type: 'range' }
+398 verbose addNamed simple-lru-cache@>=0.0.0 <0.1.0
+399 silly addNamed semver.valid null
+400 silly addNamed semver.validRange >=0.0.0 <0.1.0
+401 silly addNameRange { name: 'simple-lru-cache',
+401 silly addNameRange   range: '>=0.0.0 <0.1.0',
+401 silly addNameRange   hasData: false }
+402 silly mapToRegistry name simple-lru-cache
+403 silly mapToRegistry using default registry
+404 silly mapToRegistry registry https://registry.npmjs.org/
+405 silly mapToRegistry uri https://registry.npmjs.org/simple-lru-cache
+406 verbose addNameRange registry:https://registry.npmjs.org/simple-lru-cache not in flight; fetching
+407 verbose request uri https://registry.npmjs.org/bindings
+408 verbose request no auth needed
+409 info attempt registry request try #1 at 5:47:50 PM
+410 verbose etag "5997G8NY1OJEMZ1HNHL7VBX5J"
+411 http request GET https://registry.npmjs.org/bindings
+412 verbose request uri https://registry.npmjs.org/connection-parse
+413 verbose request no auth needed
+414 info attempt registry request try #1 at 5:47:50 PM
+415 verbose etag "BJMTG8CE7NOVP6WDVIUPEPSRE"
+416 http request GET https://registry.npmjs.org/connection-parse
+417 verbose request uri https://registry.npmjs.org/nan
+418 verbose request no auth needed
+419 info attempt registry request try #1 at 5:47:50 PM
+420 verbose etag "5IOU70T0MNE17LALUE9YPLT5T"
+421 http request GET https://registry.npmjs.org/nan
+422 verbose request uri https://registry.npmjs.org/simple-lru-cache
+423 verbose request no auth needed
+424 info attempt registry request try #1 at 5:47:50 PM
+425 verbose etag "7S4TCZ89CTJMRMUQ00DO4HEGU"
+426 http request GET https://registry.npmjs.org/simple-lru-cache
+427 http 304 https://registry.npmjs.org/retry
+428 silly get cb [ 304,
+428 silly get   { date: 'Mon, 20 Apr 2015 22:46:07 GMT',
+428 silly get     via: '1.1 varnish',
+428 silly get     'last-modified': 'Mon, 20 Apr 2015 22:46:07 GMT',
+428 silly get     'cache-control': 'max-age=60',
+428 silly get     etag: '"9E8IFDN9W1BFA3G0NIW4E0BT6"',
+428 silly get     age: '13',
+428 silly get     connection: 'keep-alive',
+428 silly get     'x-served-by': 'cache-ord1726-ORD',
+428 silly get     'x-cache': 'HIT',
+428 silly get     'x-cache-hits': '1',
+428 silly get     'x-timer': 'S1429569967.352284,VS0,VE0',
+428 silly get     vary: 'Accept' } ]
+429 verbose etag https://registry.npmjs.org/retry from cache
+430 verbose get saving retry to C:\Users\Sagar\AppData\Roaming\npm-cache\registry.npmjs.org\retry\.cache.json
+431 http 304 https://registry.npmjs.org/bindings
+432 silly get cb [ 304,
+432 silly get   { date: 'Mon, 20 Apr 2015 22:46:07 GMT',
+432 silly get     via: '1.1 varnish',
+432 silly get     'last-modified': 'Mon, 20 Apr 2015 22:46:07 GMT',
+432 silly get     'cache-control': 'max-age=60',
+432 silly get     etag: '"5997G8NY1OJEMZ1HNHL7VBX5J"',
+432 silly get     age: '34',
+432 silly get     connection: 'keep-alive',
+432 silly get     'x-served-by': 'cache-ord1720-ORD',
+432 silly get     'x-cache': 'HIT',
+432 silly get     'x-cache-hits': '1',
+432 silly get     'x-timer': 'S1429569967.349889,VS0,VE0',
+432 silly get     vary: 'Accept' } ]
+433 verbose etag https://registry.npmjs.org/bindings from cache
+434 verbose get saving bindings to C:\Users\Sagar\AppData\Roaming\npm-cache\registry.npmjs.org\bindings\.cache.json
+435 http 304 https://registry.npmjs.org/connection-parse
+436 silly get cb [ 304,
+436 silly get   { date: 'Mon, 20 Apr 2015 22:46:07 GMT',
+436 silly get     via: '1.1 varnish',
+436 silly get     'last-modified': 'Mon, 20 Apr 2015 22:46:07 GMT',
+436 silly get     'cache-control': 'max-age=60',
+436 silly get     etag: '"BJMTG8CE7NOVP6WDVIUPEPSRE"',
+436 silly get     age: '0',
+436 silly get     connection: 'keep-alive',
+436 silly get     'x-served-by': 'cache-ord1728-ORD',
+436 silly get     'x-cache': 'MISS',
+436 silly get     'x-cache-hits': '0',
+436 silly get     'x-timer': 'S1429569967.350451,VS0,VE38',
+436 silly get     vary: 'Accept' } ]
+437 verbose etag https://registry.npmjs.org/connection-parse from cache
+438 verbose get saving connection-parse to C:\Users\Sagar\AppData\Roaming\npm-cache\registry.npmjs.org\connection-parse\.cache.json
+439 silly addNameRange number 2 { name: 'bindings', range: '>=1.2.0 <1.3.0', hasData: true }
+440 silly addNameRange versions [ 'bindings',
+440 silly addNameRange   [ '0.0.1',
+440 silly addNameRange     '0.1.0',
+440 silly addNameRange     '0.1.1',
+440 silly addNameRange     '0.2.0',
+440 silly addNameRange     '0.2.1',
+440 silly addNameRange     '0.2.2',
+440 silly addNameRange     '0.2.3',
+440 silly addNameRange     '0.2.4',
+440 silly addNameRange     '0.3.0',
+440 silly addNameRange     '0.4.0',
+440 silly addNameRange     '1.0.0',
+440 silly addNameRange     '1.1.0',
+440 silly addNameRange     '1.1.1',
+440 silly addNameRange     '1.2.0',
+440 silly addNameRange     '1.2.1' ] ]
+441 verbose addNamed bindings@1.2.1
+442 silly addNamed semver.valid 1.2.1
+443 silly addNamed semver.validRange 1.2.1
+444 silly addNameRange number 2 { name: 'connection-parse',
+444 silly addNameRange   range: '>=0.0.0 <0.1.0',
+444 silly addNameRange   hasData: true }
+445 silly addNameRange versions [ 'connection-parse',
+445 silly addNameRange   [ '0.0.0',
+445 silly addNameRange     '0.0.1',
+445 silly addNameRange     '0.0.2',
+445 silly addNameRange     '0.0.3',
+445 silly addNameRange     '0.0.4',
+445 silly addNameRange     '0.0.5',
+445 silly addNameRange     '0.0.6',
+445 silly addNameRange     '0.0.7' ] ]
+446 verbose addNamed connection-parse@0.0.7
+447 silly addNamed semver.valid 0.0.7
+448 silly addNamed semver.validRange 0.0.7
+449 silly cache afterAdd bindings@1.2.1
+450 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\bindings\1.2.1\package\package.json not in flight; writing
+451 silly cache afterAdd connection-parse@0.0.7
+452 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\connection-parse\0.0.7\package\package.json not in flight; writing
+453 silly cache afterAdd retry@0.6.0
+454 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\retry\0.6.0\package\package.json not in flight; writing
+455 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\bindings\1.2.1\package\package.json written
+456 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\connection-parse\0.0.7\package\package.json written
+457 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\retry\0.6.0\package\package.json written
+458 silly install resolved [ { author:
+458 silly install resolved      { name: 'Tim Koschützki',
+458 silly install resolved        email: 'tim@debuggable.com',
+458 silly install resolved        url: 'http://debuggable.com/' },
+458 silly install resolved     name: 'retry',
+458 silly install resolved     description: 'Abstraction for exponential and custom retry strategies for failed operations.',
+458 silly install resolved     version: '0.6.0',
+458 silly install resolved     homepage: 'https://github.com/tim-kos/node-retry',
+458 silly install resolved     repository: { type: 'git', url: 'git://github.com/felixge/node-retry.git' },
+458 silly install resolved     directories: { lib: './lib' },
+458 silly install resolved     main: 'index',
+458 silly install resolved     engines: { node: '*' },
+458 silly install resolved     dependencies: {},
+458 silly install resolved     devDependencies: { fake: '0.2.0', far: '0.0.1' },
+458 silly install resolved     _npmUser: { name: 'tim-kos', email: 'tim@debuggable.com' },
+458 silly install resolved     _id: 'retry@0.6.0',
+458 silly install resolved     _engineSupported: true,
+458 silly install resolved     _npmVersion: '1.0.103',
+458 silly install resolved     _nodeVersion: 'v0.4.12',
+458 silly install resolved     _defaultsLoaded: true,
+458 silly install resolved     dist:
+458 silly install resolved      { shasum: '1c010713279a6fd1e8def28af0c3ff1871caa537',
+458 silly install resolved        tarball: 'http://registry.npmjs.org/retry/-/retry-0.6.0.tgz' },
+458 silly install resolved     maintainers: [ [Object] ],
+458 silly install resolved     _shasum: '1c010713279a6fd1e8def28af0c3ff1871caa537',
+458 silly install resolved     _resolved: 'https://registry.npmjs.org/retry/-/retry-0.6.0.tgz',
+458 silly install resolved     _from: 'retry@0.6.0',
+458 silly install resolved     bugs: { url: 'https://github.com/felixge/node-retry/issues' },
+458 silly install resolved     readme: 'ERROR: No README data found!' } ]
+459 info install retry@0.6.0 into c:\parkyourcar\node_modules\memcached\node_modules\jackpot
+460 info installOne retry@0.6.0
+461 verbose installOne of retry to c:\parkyourcar\node_modules\memcached\node_modules\jackpot not in flight; installing
+462 verbose lock using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\retry-ecabbdb06feba598.lock for c:\parkyourcar\node_modules\memcached\node_modules\jackpot\node_modules\retry
+463 silly install write writing retry 0.6.0 to c:\parkyourcar\node_modules\memcached\node_modules\jackpot\node_modules\retry
+464 silly cache addNamed cb retry@0.6.0
+465 verbose unbuild node_modules\memcached\node_modules\jackpot\node_modules\retry
+466 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\jackpot\node_modules\retry
+467 verbose tar unpack C:\Users\Sagar\AppData\Roaming\npm-cache\retry\0.6.0\package.tgz
+468 verbose tar unpacking to c:\parkyourcar\node_modules\memcached\node_modules\jackpot\node_modules\retry
+469 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\jackpot\node_modules\retry
+470 silly gunzTarPerm modes [ '777', '666' ]
+471 silly gunzTarPerm extractEntry .gitignore
+472 silly gunzTarPerm modified mode [ '.gitignore', 420, 438 ]
+473 silly gunzTarPerm extractEntry equation.gif
+474 silly gunzTarPerm modified mode [ 'equation.gif', 420, 438 ]
+475 silly gunzTarPerm extractEntry index.js
+476 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+477 http 304 https://registry.npmjs.org/nan
+478 silly get cb [ 304,
+478 silly get   { date: 'Mon, 20 Apr 2015 22:46:07 GMT',
+478 silly get     via: '1.1 varnish',
+478 silly get     'last-modified': 'Mon, 20 Apr 2015 22:46:07 GMT',
+478 silly get     'cache-control': 'max-age=60',
+478 silly get     etag: '"5IOU70T0MNE17LALUE9YPLT5T"',
+478 silly get     age: '40',
+478 silly get     connection: 'keep-alive',
+478 silly get     'x-served-by': 'cache-ord1725-ORD',
+478 silly get     'x-cache': 'HIT',
+478 silly get     'x-cache-hits': '1',
+478 silly get     'x-timer': 'S1429569967.684561,VS0,VE0',
+478 silly get     vary: 'Accept' } ]
+479 verbose etag https://registry.npmjs.org/nan from cache
+480 verbose get saving nan to C:\Users\Sagar\AppData\Roaming\npm-cache\registry.npmjs.org\nan\.cache.json
+481 silly gunzTarPerm extractEntry License
+482 silly gunzTarPerm modified mode [ 'License', 420, 438 ]
+483 silly gunzTarPerm extractEntry Makefile
+484 silly gunzTarPerm modified mode [ 'Makefile', 420, 438 ]
+485 silly gunzTarPerm extractEntry package.json
+486 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+487 silly gunzTarPerm extractEntry Readme.md
+488 silly gunzTarPerm modified mode [ 'Readme.md', 420, 438 ]
+489 silly addNameRange number 2 { name: 'nan', range: '>=1.5.0 <1.6.0', hasData: true }
+490 silly addNameRange versions [ 'nan',
+490 silly addNameRange   [ '0.3.0-wip',
+490 silly addNameRange     '0.3.0-wip2',
+490 silly addNameRange     '0.3.0',
+490 silly addNameRange     '0.3.1',
+490 silly addNameRange     '0.3.2',
+490 silly addNameRange     '0.4.0',
+490 silly addNameRange     '0.4.1',
+490 silly addNameRange     '0.4.2',
+490 silly addNameRange     '0.4.3',
+490 silly addNameRange     '0.4.4',
+490 silly addNameRange     '0.5.0',
+490 silly addNameRange     '0.5.1',
+490 silly addNameRange     '0.5.2',
+490 silly addNameRange     '0.6.0',
+490 silly addNameRange     '0.7.0',
+490 silly addNameRange     '0.7.1',
+490 silly addNameRange     '0.8.0',
+490 silly addNameRange     '1.0.0',
+490 silly addNameRange     '1.1.0',
+490 silly addNameRange     '1.1.1',
+490 silly addNameRange     '1.1.2',
+490 silly addNameRange     '1.2.0',
+490 silly addNameRange     '1.3.0',
+490 silly addNameRange     '1.4.0',
+490 silly addNameRange     '1.4.1',
+490 silly addNameRange     '1.5.0',
+490 silly addNameRange     '1.4.2',
+490 silly addNameRange     '1.4.3',
+490 silly addNameRange     '1.5.1',
+490 silly addNameRange     '1.5.2',
+490 silly addNameRange     '1.6.0',
+490 silly addNameRange     '1.5.3',
+490 silly addNameRange     '1.6.1',
+490 silly addNameRange     '1.6.2',
+490 silly addNameRange     '1.7.0' ] ]
+491 verbose addNamed nan@1.5.3
+492 silly addNamed semver.valid 1.5.3
+493 silly addNamed semver.validRange 1.5.3
+494 silly cache afterAdd nan@1.5.3
+495 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\nan\1.5.3\package\package.json not in flight; writing
+496 silly gunzTarPerm extractEntry example/dns.js
+497 silly gunzTarPerm modified mode [ 'example/dns.js', 420, 438 ]
+498 silly gunzTarPerm extractEntry lib/retry_operation.js
+499 silly gunzTarPerm modified mode [ 'lib/retry_operation.js', 420, 438 ]
+500 silly gunzTarPerm extractEntry lib/retry.js
+501 silly gunzTarPerm modified mode [ 'lib/retry.js', 420, 438 ]
+502 silly gunzTarPerm extractEntry test/common.js
+503 silly gunzTarPerm modified mode [ 'test/common.js', 420, 438 ]
+504 silly gunzTarPerm extractEntry test/runner.js
+505 silly gunzTarPerm modified mode [ 'test/runner.js', 420, 438 ]
+506 silly gunzTarPerm extractEntry test/integration/test-retry-operation.js
+507 silly gunzTarPerm modified mode [ 'test/integration/test-retry-operation.js', 420, 438 ]
+508 silly gunzTarPerm extractEntry test/integration/test-timeouts.js
+509 silly gunzTarPerm modified mode [ 'test/integration/test-timeouts.js', 420, 438 ]
+510 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\nan\1.5.3\package\package.json written
+511 http 304 https://registry.npmjs.org/simple-lru-cache
+512 silly get cb [ 304,
+512 silly get   { date: 'Mon, 20 Apr 2015 22:46:07 GMT',
+512 silly get     via: '1.1 varnish',
+512 silly get     'last-modified': 'Mon, 20 Apr 2015 22:46:07 GMT',
+512 silly get     'cache-control': 'max-age=60',
+512 silly get     etag: '"7S4TCZ89CTJMRMUQ00DO4HEGU"',
+512 silly get     age: '0',
+512 silly get     connection: 'keep-alive',
+512 silly get     'x-served-by': 'cache-ord1732-ORD',
+512 silly get     'x-cache': 'MISS',
+512 silly get     'x-cache-hits': '0',
+512 silly get     'x-timer': 'S1429569967.686625,VS0,VE66',
+512 silly get     vary: 'Accept' } ]
+513 verbose etag https://registry.npmjs.org/simple-lru-cache from cache
+514 verbose get saving simple-lru-cache to C:\Users\Sagar\AppData\Roaming\npm-cache\registry.npmjs.org\simple-lru-cache\.cache.json
+515 silly addNameRange number 2 { name: 'simple-lru-cache',
+515 silly addNameRange   range: '>=0.0.0 <0.1.0',
+515 silly addNameRange   hasData: true }
+516 silly addNameRange versions [ 'simple-lru-cache', [ '0.0.1', '0.0.2' ] ]
+517 verbose addNamed simple-lru-cache@0.0.2
+518 silly addNamed semver.valid 0.0.2
+519 silly addNamed semver.validRange 0.0.2
+520 silly cache afterAdd simple-lru-cache@0.0.2
+521 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\simple-lru-cache\0.0.2\package\package.json not in flight; writing
+522 verbose afterAdd C:\Users\Sagar\AppData\Roaming\npm-cache\simple-lru-cache\0.0.2\package\package.json written
+523 silly install resolved [ { name: 'bindings',
+523 silly install resolved     description: 'Helper module for loading your native module\'s .node file',
+523 silly install resolved     keywords: [ 'native', 'addon', 'bindings', 'gyp', 'waf', 'c', 'c++' ],
+523 silly install resolved     version: '1.2.1',
+523 silly install resolved     author:
+523 silly install resolved      { name: 'Nathan Rajlich',
+523 silly install resolved        email: 'nathan@tootallnate.net',
+523 silly install resolved        url: 'http://tootallnate.net' },
+523 silly install resolved     repository:
+523 silly install resolved      { type: 'git',
+523 silly install resolved        url: 'git://github.com/TooTallNate/node-bindings.git' },
+523 silly install resolved     main: './bindings.js',
+523 silly install resolved     bugs: { url: 'https://github.com/TooTallNate/node-bindings/issues' },
+523 silly install resolved     homepage: 'https://github.com/TooTallNate/node-bindings',
+523 silly install resolved     license: 'MIT',
+523 silly install resolved     gitHead: 'e404152ee27f8478ccbc7122ee051246e8e5ec02',
+523 silly install resolved     _id: 'bindings@1.2.1',
+523 silly install resolved     scripts: {},
+523 silly install resolved     _shasum: '14ad6113812d2d37d72e67b4cacb4bb726505f11',
+523 silly install resolved     _from: 'bindings@>=1.2.0 <1.3.0',
+523 silly install resolved     _npmVersion: '1.4.14',
+523 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+523 silly install resolved     maintainers: [ [Object], [Object] ],
+523 silly install resolved     dist:
+523 silly install resolved      { shasum: '14ad6113812d2d37d72e67b4cacb4bb726505f11',
+523 silly install resolved        tarball: 'http://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz' },
+523 silly install resolved     directories: {},
+523 silly install resolved     _resolved: 'https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz',
+523 silly install resolved     readme: 'ERROR: No README data found!' },
+523 silly install resolved   { name: 'connection-parse',
+523 silly install resolved     version: '0.0.7',
+523 silly install resolved     description: 'Simple TCP connection string parser',
+523 silly install resolved     main: 'index.js',
+523 silly install resolved     scripts: { test: 'mocha $(shell find test -name \'*.test.js\')' },
+523 silly install resolved     repository:
+523 silly install resolved      { type: 'git',
+523 silly install resolved        url: 'git://github.com/3rd-Eden/connection-parse.git' },
+523 silly install resolved     keywords: [ 'TCP', 'connection', 'parser', 'connection-string' ],
+523 silly install resolved     author: { name: 'Arnout Kazemier' },
+523 silly install resolved     license: 'MIT',
+523 silly install resolved     devDependencies: { mocha: '1.8.x', chai: '1.4.x' },
+523 silly install resolved     _id: 'connection-parse@0.0.7',
+523 silly install resolved     dist:
+523 silly install resolved      { shasum: '18e7318aab06a699267372b10c5226d25a1c9a69',
+523 silly install resolved        tarball: 'http://registry.npmjs.org/connection-parse/-/connection-parse-0.0.7.tgz' },
+523 silly install resolved     _npmVersion: '1.1.59',
+523 silly install resolved     _npmUser: { name: 'V1', email: 'info@3rd-Eden.com' },
+523 silly install resolved     maintainers: [ [Object] ],
+523 silly install resolved     directories: {},
+523 silly install resolved     _shasum: '18e7318aab06a699267372b10c5226d25a1c9a69',
+523 silly install resolved     _resolved: 'https://registry.npmjs.org/connection-parse/-/connection-parse-0.0.7.tgz',
+523 silly install resolved     _from: 'connection-parse@>=0.0.0 <0.1.0',
+523 silly install resolved     bugs: { url: 'https://github.com/3rd-Eden/connection-parse/issues' },
+523 silly install resolved     readme: 'ERROR: No README data found!',
+523 silly install resolved     homepage: 'https://github.com/3rd-Eden/connection-parse' },
+523 silly install resolved   { name: 'nan',
+523 silly install resolved     version: '1.5.3',
+523 silly install resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8->0.12 compatibility',
+523 silly install resolved     main: 'include_dirs.js',
+523 silly install resolved     repository: { type: 'git', url: 'git://github.com/rvagg/nan.git' },
+523 silly install resolved     scripts:
+523 silly install resolved      { test: 'tap --gc test/js/*-test.js',
+523 silly install resolved        'rebuild-tests': 'node-gyp rebuild --directory test' },
+523 silly install resolved     contributors:
+523 silly install resolved      [ [Object],
+523 silly install resolved        [Object],
+523 silly install resolved        [Object],
+523 silly install resolved        [Object],
+523 silly install resolved        [Object],
+523 silly install resolved        [Object],
+523 silly install resolved        [Object] ],
+523 silly install resolved     devDependencies:
+523 silly install resolved      { bindings: '~1.2.1',
+523 silly install resolved        'node-gyp': '~1.0.2',
+523 silly install resolved        tap: '~0.5.0',
+523 silly install resolved        xtend: '~4.0.0' },
+523 silly install resolved     license: 'MIT',
+523 silly install resolved     gitHead: '28ea7e1b769f790c69deaf141b47e4d41e176e8b',
+523 silly install resolved     bugs: { url: 'https://github.com/rvagg/nan/issues' },
+523 silly install resolved     homepage: 'https://github.com/rvagg/nan',
+523 silly install resolved     _id: 'nan@1.5.3',
+523 silly install resolved     _shasum: '4cd0ecc133b7b0700a492a646add427ae8a318eb',
+523 silly install resolved     _from: 'nan@>=1.5.0 <1.6.0',
+523 silly install resolved     _npmVersion: '2.1.18',
+523 silly install resolved     _nodeVersion: '1.0.3',
+523 silly install resolved     _npmUser: { name: 'rvagg', email: 'rod@vagg.org' },
+523 silly install resolved     maintainers: [ [Object], [Object] ],
+523 silly install resolved     dist:
+523 silly install resolved      { shasum: '4cd0ecc133b7b0700a492a646add427ae8a318eb',
+523 silly install resolved        tarball: 'http://registry.npmjs.org/nan/-/nan-1.5.3.tgz' },
+523 silly install resolved     directories: {},
+523 silly install resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-1.5.3.tgz',
+523 silly install resolved     readme: 'ERROR: No README data found!' },
+523 silly install resolved   { name: 'simple-lru-cache',
+523 silly install resolved     version: '0.0.2',
+523 silly install resolved     author: { name: 'Gabriel Eisbruch' },
+523 silly install resolved     description: 'node-simple-lru-cache =====================',
+523 silly install resolved     main: 'index',
+523 silly install resolved     keywords: [ 'cache', 'lru', 'simple', 'fast' ],
+523 silly install resolved     directories: { lib: './lib' },
+523 silly install resolved     maintainers: [ [Object] ],
+523 silly install resolved     licenses: [ [Object] ],
+523 silly install resolved     repositories: [ [Object] ],
+523 silly install resolved     dependencies: {},
+523 silly install resolved     devDependencies: { mocha: '*', should: '*' },
+523 silly install resolved     scripts: { test: 'make test', bench: 'make bench' },
+523 silly install resolved     repository:
+523 silly install resolved      { type: 'git',
+523 silly install resolved        url: 'http://github.com/geisbruch/node-simple-lru-cache.git' },
+523 silly install resolved     bugs: { url: 'https://github.com/geisbruch/node-simple-lru-cache/issues' },
+523 silly install resolved     homepage: 'https://github.com/geisbruch/node-simple-lru-cache',
+523 silly install resolved     _id: 'simple-lru-cache@0.0.2',
+523 silly install resolved     _shasum: 'd59cc3a193c1a5d0320f84ee732f6e4713e511dd',
+523 silly install resolved     _from: 'simple-lru-cache@>=0.0.0 <0.1.0',
+523 silly install resolved     _npmVersion: '1.4.9',
+523 silly install resolved     _npmUser: { name: 'geisbruch', email: 'gabrieleisbruch@gmail.com' },
+523 silly install resolved     dist:
+523 silly install resolved      { shasum: 'd59cc3a193c1a5d0320f84ee732f6e4713e511dd',
+523 silly install resolved        tarball: 'http://registry.npmjs.org/simple-lru-cache/-/simple-lru-cache-0.0.2.tgz' },
+523 silly install resolved     _resolved: 'https://registry.npmjs.org/simple-lru-cache/-/simple-lru-cache-0.0.2.tgz',
+523 silly install resolved     readme: 'ERROR: No README data found!' } ]
+524 info install bindings@1.2.1 into c:\parkyourcar\node_modules\memcached\node_modules\hashring
+525 info install connection-parse@0.0.7 into c:\parkyourcar\node_modules\memcached\node_modules\hashring
+526 info install nan@1.5.3 into c:\parkyourcar\node_modules\memcached\node_modules\hashring
+527 info install simple-lru-cache@0.0.2 into c:\parkyourcar\node_modules\memcached\node_modules\hashring
+528 info installOne bindings@1.2.1
+529 verbose installOne of bindings to c:\parkyourcar\node_modules\memcached\node_modules\hashring not in flight; installing
+530 info installOne connection-parse@0.0.7
+531 verbose installOne of connection-parse to c:\parkyourcar\node_modules\memcached\node_modules\hashring not in flight; installing
+532 info installOne nan@1.5.3
+533 verbose installOne of nan to c:\parkyourcar\node_modules\memcached\node_modules\hashring not in flight; installing
+534 info installOne simple-lru-cache@0.0.2
+535 verbose installOne of simple-lru-cache to c:\parkyourcar\node_modules\memcached\node_modules\hashring not in flight; installing
+536 verbose lock using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\bindings-421ba3c91149db23.lock for c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\bindings
+537 verbose lock using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\connection-parse-dbe51587b8a437d6.lock for c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\connection-parse
+538 silly install write writing bindings 1.2.1 to c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\bindings
+539 silly cache addNamed cb bindings@1.2.1
+540 verbose unbuild node_modules\memcached\node_modules\hashring\node_modules\bindings
+541 verbose lock using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\nan-c0c40b8a939f1f2f.lock for c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\nan
+542 silly install write writing connection-parse 0.0.7 to c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\connection-parse
+543 silly cache addNamed cb connection-parse@0.0.7
+544 verbose unbuild node_modules\memcached\node_modules\hashring\node_modules\connection-parse
+545 verbose lock using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\simple-lru-cache-35e0d14be0d08cce.lock for c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\simple-lru-cache
+546 silly install write writing nan 1.5.3 to c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\nan
+547 silly cache addNamed cb nan@1.5.3
+548 verbose unbuild node_modules\memcached\node_modules\hashring\node_modules\nan
+549 silly install write writing simple-lru-cache 0.0.2 to c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\simple-lru-cache
+550 silly cache addNamed cb simple-lru-cache@0.0.2
+551 verbose unbuild node_modules\memcached\node_modules\hashring\node_modules\simple-lru-cache
+552 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\bindings
+553 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\connection-parse
+554 verbose tar unpack C:\Users\Sagar\AppData\Roaming\npm-cache\bindings\1.2.1\package.tgz
+555 verbose tar unpacking to c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\bindings
+556 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\bindings
+557 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\nan
+558 verbose tar unpack C:\Users\Sagar\AppData\Roaming\npm-cache\connection-parse\0.0.7\package.tgz
+559 verbose tar unpacking to c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\connection-parse
+560 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\connection-parse
+561 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\simple-lru-cache
+562 silly gunzTarPerm modes [ '777', '666' ]
+563 verbose tar unpack C:\Users\Sagar\AppData\Roaming\npm-cache\nan\1.5.3\package.tgz
+564 verbose tar unpacking to c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\nan
+565 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\nan
+566 silly gunzTarPerm modes [ '777', '666' ]
+567 verbose tar unpack C:\Users\Sagar\AppData\Roaming\npm-cache\simple-lru-cache\0.0.2\package.tgz
+568 verbose tar unpacking to c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\simple-lru-cache
+569 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\simple-lru-cache
+570 silly gunzTarPerm modes [ '777', '666' ]
+571 silly gunzTarPerm modes [ '777', '666' ]
+572 silly gunzTarPerm extractEntry package.json
+573 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+574 silly gunzTarPerm extractEntry package.json
+575 silly gunzTarPerm extractEntry package.json
+576 silly gunzTarPerm modified mode [ 'package.json', 436, 438 ]
+577 silly gunzTarPerm extractEntry package.json
+578 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+579 silly gunzTarPerm extractEntry README.md
+580 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+581 silly gunzTarPerm extractEntry bindings.js
+582 silly gunzTarPerm modified mode [ 'bindings.js', 420, 438 ]
+583 silly gunzTarPerm extractEntry .npmignore
+584 silly gunzTarPerm extractEntry README.md
+585 silly gunzTarPerm extractEntry README.md
+586 silly gunzTarPerm modified mode [ 'README.md', 436, 438 ]
+587 silly gunzTarPerm extractEntry .npmignore
+588 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+589 silly gunzTarPerm extractEntry README.md
+590 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+591 silly gunzTarPerm extractEntry include_dirs.js
+592 silly gunzTarPerm modified mode [ 'include_dirs.js', 420, 438 ]
+593 silly gunzTarPerm extractEntry LICENSE.md
+594 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 438 ]
+595 silly gunzTarPerm extractEntry .dntrc
+596 silly gunzTarPerm modified mode [ '.dntrc', 436, 438 ]
+597 silly gunzTarPerm extractEntry appveyor.yml
+598 silly gunzTarPerm modified mode [ 'appveyor.yml', 436, 438 ]
+599 silly gunzTarPerm extractEntry index.js
+600 silly gunzTarPerm extractEntry CHANGELOG.md
+601 silly gunzTarPerm extractEntry LICENSE
+602 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+603 silly gunzTarPerm extractEntry index.js
+604 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+605 silly gunzTarPerm extractEntry benckmark/README.md
+606 silly gunzTarPerm modified mode [ 'benckmark/README.md', 420, 438 ]
+607 silly gunzTarPerm extractEntry benckmark/bench.js
+608 silly gunzTarPerm modified mode [ 'benckmark/bench.js', 420, 438 ]
+609 silly gunzTarPerm extractEntry benckmark/engine.bench.js
+610 silly gunzTarPerm modified mode [ 'benckmark/engine.bench.js', 420, 438 ]
+611 silly gunzTarPerm extractEntry lib/simple_lru.js
+612 silly gunzTarPerm modified mode [ 'lib/simple_lru.js', 420, 438 ]
+613 silly gunzTarPerm extractEntry Makefile
+614 silly gunzTarPerm modified mode [ 'Makefile', 420, 438 ]
+615 silly gunzTarPerm extractEntry servers
+616 silly gunzTarPerm modified mode [ 'servers', 420, 438 ]
+617 silly gunzTarPerm extractEntry test/simple_lru_tests.js
+618 silly gunzTarPerm modified mode [ 'test/simple_lru_tests.js', 420, 438 ]
+619 info preinstall retry@0.6.0
+620 silly install resolved []
+621 verbose about to build c:\parkyourcar\node_modules\memcached\node_modules\jackpot\node_modules\retry
+622 info build c:\parkyourcar\node_modules\memcached\node_modules\jackpot\node_modules\retry
+623 verbose linkStuff [ false,
+623 verbose linkStuff   false,
+623 verbose linkStuff   false,
+623 verbose linkStuff   'c:\\parkyourcar\\node_modules\\memcached\\node_modules\\jackpot\\node_modules' ]
+624 info linkStuff retry@0.6.0
+625 verbose linkBins retry@0.6.0
+626 verbose linkMans retry@0.6.0
+627 verbose rebuildBundles retry@0.6.0
+628 info install retry@0.6.0
+629 info postinstall retry@0.6.0
+630 silly gunzTarPerm extractEntry test/parse.test.js
+631 silly gunzTarPerm extractEntry test/mocha.opts
+632 verbose unlock done using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\retry-ecabbdb06feba598.lock for c:\parkyourcar\node_modules\memcached\node_modules\jackpot\node_modules\retry
+633 verbose about to build c:\parkyourcar\node_modules\memcached\node_modules\jackpot
+634 info build c:\parkyourcar\node_modules\memcached\node_modules\jackpot
+635 verbose linkStuff [ false,
+635 verbose linkStuff   false,
+635 verbose linkStuff   false,
+635 verbose linkStuff   'c:\\parkyourcar\\node_modules\\memcached\\node_modules' ]
+636 info linkStuff jackpot@0.0.6
+637 verbose linkBins jackpot@0.0.6
+638 verbose linkMans jackpot@0.0.6
+639 verbose rebuildBundles jackpot@0.0.6
+640 verbose rebuildBundles [ 'retry' ]
+641 info install jackpot@0.0.6
+642 info postinstall jackpot@0.0.6
+643 silly gunzTarPerm extractEntry nan.h
+644 silly gunzTarPerm modified mode [ 'nan.h', 436, 438 ]
+645 verbose unlock done using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\jackpot-aa551adbfcc4c7e8.lock for c:\parkyourcar\node_modules\memcached\node_modules\jackpot
+646 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+647 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 438 ]
+648 info preinstall bindings@1.2.1
+649 silly install resolved []
+650 verbose about to build c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\bindings
+651 info build c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\bindings
+652 verbose linkStuff [ false,
+652 verbose linkStuff   false,
+652 verbose linkStuff   false,
+652 verbose linkStuff   'c:\\parkyourcar\\node_modules\\memcached\\node_modules\\hashring\\node_modules' ]
+653 info linkStuff bindings@1.2.1
+654 verbose linkBins bindings@1.2.1
+655 verbose linkMans bindings@1.2.1
+656 verbose rebuildBundles bindings@1.2.1
+657 info install bindings@1.2.1
+658 info postinstall bindings@1.2.1
+659 verbose unlock done using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\bindings-421ba3c91149db23.lock for c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\bindings
+660 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+661 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 438 ]
+662 silly gunzTarPerm extractEntry nan_new.h
+663 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 438 ]
+664 silly gunzTarPerm extractEntry CHANGELOG.md
+665 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 438 ]
+666 silly gunzTarPerm extractEntry test.txt
+667 info preinstall simple-lru-cache@0.0.2
+668 silly install resolved []
+669 verbose about to build c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\simple-lru-cache
+670 info build c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\simple-lru-cache
+671 verbose linkStuff [ false,
+671 verbose linkStuff   false,
+671 verbose linkStuff   false,
+671 verbose linkStuff   'c:\\parkyourcar\\node_modules\\memcached\\node_modules\\hashring\\node_modules' ]
+672 info linkStuff simple-lru-cache@0.0.2
+673 verbose linkBins simple-lru-cache@0.0.2
+674 verbose linkMans simple-lru-cache@0.0.2
+675 verbose rebuildBundles simple-lru-cache@0.0.2
+676 info install simple-lru-cache@0.0.2
+677 info postinstall simple-lru-cache@0.0.2
+678 verbose unlock done using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\simple-lru-cache-35e0d14be0d08cce.lock for c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\simple-lru-cache
+679 info preinstall connection-parse@0.0.7
+680 silly install resolved []
+681 verbose about to build c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\connection-parse
+682 info build c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\connection-parse
+683 verbose linkStuff [ false,
+683 verbose linkStuff   false,
+683 verbose linkStuff   false,
+683 verbose linkStuff   'c:\\parkyourcar\\node_modules\\memcached\\node_modules\\hashring\\node_modules' ]
+684 info linkStuff connection-parse@0.0.7
+685 verbose linkBins connection-parse@0.0.7
+686 verbose linkMans connection-parse@0.0.7
+687 verbose rebuildBundles connection-parse@0.0.7
+688 info install connection-parse@0.0.7
+689 info postinstall connection-parse@0.0.7
+690 verbose unlock done using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\connection-parse-dbe51587b8a437d6.lock for c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\connection-parse
+691 info preinstall nan@1.5.3
+692 silly install resolved []
+693 verbose about to build c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\nan
+694 info build c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\nan
+695 verbose linkStuff [ false,
+695 verbose linkStuff   false,
+695 verbose linkStuff   false,
+695 verbose linkStuff   'c:\\parkyourcar\\node_modules\\memcached\\node_modules\\hashring\\node_modules' ]
+696 info linkStuff nan@1.5.3
+697 verbose linkBins nan@1.5.3
+698 verbose linkMans nan@1.5.3
+699 verbose rebuildBundles nan@1.5.3
+700 info install nan@1.5.3
+701 info postinstall nan@1.5.3
+702 verbose unlock done using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\nan-c0c40b8a939f1f2f.lock for c:\parkyourcar\node_modules\memcached\node_modules\hashring\node_modules\nan
+703 verbose about to build c:\parkyourcar\node_modules\memcached\node_modules\hashring
+704 info build c:\parkyourcar\node_modules\memcached\node_modules\hashring
+705 verbose linkStuff [ false,
+705 verbose linkStuff   false,
+705 verbose linkStuff   false,
+705 verbose linkStuff   'c:\\parkyourcar\\node_modules\\memcached\\node_modules' ]
+706 info linkStuff hashring@3.1.0
+707 verbose linkBins hashring@3.1.0
+708 verbose linkMans hashring@3.1.0
+709 verbose rebuildBundles hashring@3.1.0
+710 verbose rebuildBundles [ 'bindings', 'connection-parse', 'nan', 'simple-lru-cache' ]
+711 info install hashring@3.1.0
+712 verbose unsafe-perm in lifecycle true
+713 info hashring@3.1.0 Failed to exec install script
+714 verbose unlock done using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\hashring-a046cfaaa5351b48.lock for c:\parkyourcar\node_modules\memcached\node_modules\hashring
+715 verbose about to build c:\parkyourcar\node_modules\memcached
+716 verbose unlock done using C:\Users\Sagar\AppData\Roaming\npm-cache\_locks\memcached-80c9270bc66ee484.lock for c:\parkyourcar\node_modules\memcached
+717 verbose stack Error: hashring@3.1.0 install: `node-gyp rebuild`
+717 verbose stack Exit status 1
+717 verbose stack     at EventEmitter.<anonymous> (c:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:213:16)
+717 verbose stack     at EventEmitter.emit (events.js:110:17)
+717 verbose stack     at ChildProcess.<anonymous> (c:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:14:12)
+717 verbose stack     at ChildProcess.emit (events.js:110:17)
+717 verbose stack     at maybeClose (child_process.js:1008:16)
+717 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1080:5)
+718 verbose pkgid hashring@3.1.0
+719 verbose cwd c:\parkyourcar
+720 error Windows_NT 6.3.9600
+721 error argv "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "memcached"
+722 error node v0.12.1
+723 error npm  v2.5.1
+724 error code ELIFECYCLE
+725 error hashring@3.1.0 install: `node-gyp rebuild`
+725 error Exit status 1
+726 error Failed at the hashring@3.1.0 install script 'node-gyp rebuild'.
+726 error This is most likely a problem with the hashring package,
+726 error not with npm itself.
+726 error Tell the author that this fails on your system:
+726 error     node-gyp rebuild
+726 error You can get their info via:
+726 error     npm owner ls hashring
+726 error There is likely additional logging output above.
+727 verbose exit [ 1, true ]
+728 verbose unbuild node_modules\memcached\node_modules\hashring
+729 info preuninstall hashring@3.1.0
+730 info uninstall hashring@3.1.0
+731 verbose unbuild rmStuff hashring@3.1.0 from c:\parkyourcar\node_modules
+732 verbose unbuild rmStuff in c:\parkyourcar\node_modules\memcached\node_modules
+733 info postuninstall hashring@3.1.0
+734 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached\node_modules\hashring
+735 silly gentlyRm purging c:\parkyourcar\node_modules\memcached\node_modules\hashring
+736 silly gentlyRm quitting because other entries in c:\parkyourcar\node_modules\memcached\node_modules
+737 verbose unbuild node_modules\memcached
+738 info preuninstall memcached@2.1.0
+739 info uninstall memcached@2.1.0
+740 verbose unbuild rmStuff memcached@2.1.0 from c:\parkyourcar\node_modules
+741 info postuninstall memcached@2.1.0
+742 verbose gentlyRm vacuuming c:\parkyourcar\node_modules\memcached
+743 silly gentlyRm purging c:\parkyourcar\node_modules\memcached
+744 silly gentlyRm quitting because other entries in c:\parkyourcar\node_modules

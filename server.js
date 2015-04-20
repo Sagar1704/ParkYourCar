@@ -9,6 +9,7 @@ var compress = require('compression');
 var http     = require('http');
 var https    = require('https');
 var fs       = require('fs');
+// var Memcached = require('memcached');
 
 var options = {
     key: fs.readFileSync('parkyourcar.key'),
@@ -90,5 +91,6 @@ app.use(function(error, req, res, next) {
 // launch ======================================================================
 //app.listen(port);
 http.createServer(app).listen(3000);
+http.createServer(app).listen(3002);
 https.createServer(options, app).listen(3001);
 console.log('The magic happens on port ' + port);
