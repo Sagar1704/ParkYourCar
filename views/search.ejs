@@ -57,7 +57,8 @@
       <div class="form-group">
         <div class="input-group input-group-lg">
           <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></span>
-          <input id="floor_name" name="floor_name" type="text" class="form-control" placeholder="Floor Name" aria-describedby="sizing-addon1">
+          <input id="floor_name" name="floor_name" type="text" list="searchResults" autocomplete = "on" class="form-control" placeholder="Floor Name" aria-describedby="sizing-addon1">
+          <datalist id="searchResults"></datalist>
         </div>
       </div>
       <div class="form-group">
@@ -132,14 +133,20 @@
     });
 
     $('#floor_name').focus(function() {
+      var dataList = $("#searchResults");
+      dataList.empty();
       $.ajax({
         type: "GET",
         url: "http://localhost:3000/api/getFloors",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
-        data: JSON.stringify(sendInfo),
+        // data: JSON.stringify(sendInfo),
         success: function (data, status, jqXHR) {
-          alert(JSON.stringify(data));
+          for(index = 0; index < data.floors.length; index++) {
+            var opt = $("<option></option>").attr("value", data.floors[index]);
+            dataList.append(opt);
+          }
+
         },
 
         error: function (jqXHR, status) {

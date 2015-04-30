@@ -199,11 +199,35 @@ router.delete('/cancel', isTokenValid,
     }
 );
 
-router.get('/getFloors', isTokenValid,
+router.get('/getFloors',
     function(req, res) {
+        console.log("In getFloors API");
         var searchQuery = {
             floor_name : {$ne : 'black'}
-        };        
+        };
+
+        var columns = {
+            _id : 0,
+            floor_name : 1
+        };
+
+        Parking_lot.distinct("floor_name", searchQuery, function(err, floor) {
+            if (err) {
+                console.log(err);
+                res.send(err);
+            }
+            console.log(floor);
+            /*var tempFloor = new Array();
+            for (var i = floor.length; i++) {
+                tempFloor.push(floor[i]);
+            };*/
+
+            res.json(
+            {
+                status: 200,
+                floors : floor
+            });
+        });
     }
 );
 
