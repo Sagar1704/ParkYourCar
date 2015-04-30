@@ -4,6 +4,7 @@ var moment  = require('moment');
 var frmt    = "YYYY-MM-DDThh:mm:ss.mmZ";
 
 //Models
+var User        = require('./models/user');
 var Parking_lot = require('./models/parking_lot');
 var Booking     = require('./models/booking');
 
@@ -22,10 +23,11 @@ router.get('/', function(req, res) {
 });
 
 //Get the available slots based on the user search
-router.post('/search',
-	function(req, res) {
+router.post('/search', isTokenValid,
+       function(req, res) {
 		var body = req.body;
-
+        
+        // console.log("token : " + body.token.trim());
 		// console.log("floor_name : " + body.floor_name);
 		// console.log("checkin_time: " + body.checkin_time);
 		// console.log("checkout_time: " + body.checkout_time);
@@ -94,7 +96,7 @@ router.post('/search',
 );
 
 //Book the available slot
-router.post('/book',
+router.post('/book', isTokenValid,
 	function(req, res) {
 		var body = req.body;
 		console.log("email : " + body.email.trim());
@@ -126,7 +128,7 @@ router.post('/book',
 );
 
 //View booked slots
-router.post('/view',
+router.post('/view', isTokenValid,
     function(req, res) {
         var body = req.body;
 
@@ -163,7 +165,7 @@ router.post('/view',
 );
 
 //Cancel booking
-router.delete('/cancel',
+router.delete('/cancel', isTokenValid,
     function(req, res) {
         var body = req.body;
 
@@ -196,5 +198,45 @@ router.delete('/cancel',
         });
     }
 );
+
+router.get('/getFloors', isTokenValid,
+    function(req, res) {
+        var searchQuery = {
+            floor_name : {$ne : 'black'}
+        };        
+    }
+);
+
+function isTokenValid(req, res, next) {
+    var body = req.body;
+    console.log("token : " + body.token.trim());
+
+    var searchQuery = {
+        $or : [
+            {'local.token' : body.token.trim()},
+            {'facebook.token' : body.token.trim()},
+            {'google.token' : body.token.trim()}
+        ]
+    };
+
+    User.find(searchQuery, function(err, user) {
+        if (err) {
+            res.redirect('/');
+        }
+        console.log("Users..." + user);
+        console.log("Users length :: " + user.length);
+        if(user.length != 0) {
+            return next();        
+        }
+
+        res.send(
+            {
+                status   : 302,
+                redirect : '/'
+            }
+        );
+    });
+
+}
 
 module.exports = router;

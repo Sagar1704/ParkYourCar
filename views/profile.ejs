@@ -16,6 +16,14 @@
     </style>
 </head>
 <body>
+    <div id='userToken' style="display: none;"><% if(user.local.token) {%>
+      <%=user.local.token%>
+      <%} else if(user.facebook.token) {%>
+        <%=user.facebook.token%>
+      <%} else {%>
+        <%=user.google.token%>
+      <%}
+  %></div>
     <div id='userEmail' style="display: none;"><% if(user.local.email) {%>
         <%=user.local.email%>
         <%} else if(user.facebook.email) {%>
@@ -144,6 +152,7 @@
             $(".table-responsive").slideToggle("slow");
 
             var sendInfo = {
+                token : document.getElementById('userToken').innerHTML,
                 email : document.getElementById('userEmail').innerHTML
             };
 
@@ -178,6 +187,7 @@
         function() {
             // $(this).parent().parent().remove();
             var sendInfo = {
+                token : document.getElementById('userToken').innerHTML,
                 email : document.getElementById('userEmail').innerHTML,
                 floor_name : $(this).parents('tr').find('td.floors').text(),
                 slot_number : $(this).parents('tr').find('td.slots').text(),

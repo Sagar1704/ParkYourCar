@@ -1,25 +1,45 @@
 // set up ======================================================================
 // get all the tools we need
+
+// This is the nodejs framework
 var express  = require('express');
 var app      = express();
 var path     = require('path');
-var port     = process.env.PORT || 3000;
+
+// Default ports
+var port1      = process.env.port || 3000;
+var port2      = process.env.port || 3001;
+var securePort = process.env.port || 3002;
+
+// ORM for MongoDB
 var mongoose = require('mongoose');
+
+// GZIP compression
 var compress = require('compression');
+// To use gzip compression
+app.use(compress());
+
+// TLS/SSL
 var http     = require('http');
 var https    = require('https');
 var fs       = require('fs');
-// var Memcached = require('memcached');
-
-var options = {
+var options  = {
     key: fs.readFileSync('parkyourcar.key'),
     cert: fs.readFileSync('parkyourcar.crt')
 };
 
+// Memcache
+var mc       = require('mc');
+var mcClient = new mc.Client();
+
+// OAuth Authentication
 var passport = require('passport');
 var flash    = require('connect-flash');
 
+// Logger
 var morgan       = require('morgan');
+
+
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 //var session      = require('express-session');
@@ -28,10 +48,7 @@ var session      = require('client-sessions');
 //Connect to the database
 var configDB = require('./config/database.js');
 
-//To use gzip compression
-app.use(compress());
-
-// configuration ===============================================================
+// mongoose configuration ===========================================================
 mongoose.connect(configDB.url); // connect to our database
 
 mongoose.connection.on('open', function (ref) {
@@ -89,8 +106,8 @@ app.use(function(error, req, res, next) {
 });
 
 // launch ======================================================================
-//app.listen(port);
-http.createServer(app).listen(3000);
-http.createServer(app).listen(3002);
-https.createServer(options, app).listen(3001);
-console.log('The magic happens on port ' + port);
+//app.listen(port1);
+http.createServer(app).listen(port1);
+http.createServer(app).listen(port2);
+https.createServer(options, app).listen(securePort);
+// console.log('The magic happens on port1 ' + port1);

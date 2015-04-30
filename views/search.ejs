@@ -16,6 +16,14 @@
   </style>
 </head>
 <body>
+  <div id='userToken' style="display: none;"><% if(user.local.token) {%>
+      <%=user.local.token%>
+      <%} else if(user.facebook.token) {%>
+        <%=user.facebook.token%>
+      <%} else {%>
+        <%=user.google.token%>
+      <%}
+  %></div>
   <div id='userEmail' style="display: none;"><% if(user.local.email) {%>
       <%=user.local.email%>
       <%} else if(user.facebook.email) {%>
@@ -83,6 +91,7 @@
     $('#searchButton').on('click', function() {
 
       var sendInfo = {
+        token : document.getElementById('userToken').innerHTML,
         floor_name : $("#floor_name").val(),
         checkin_time : $("#booking_date").val() + 'T' + $("#checkin_time").val() + ':00.000Z',
         checkout_time : $("#booking_date").val() + 'T' + $("#checkout_time").val() + ':00.000Z'
@@ -100,6 +109,9 @@
         data: JSON.stringify(sendInfo),
         success: function (data, status, jqXHR) {
           alert(JSON.stringify(data));
+          if(data.status == 302)
+            window.location = data.redirect;
+
           var resultData = "<table id='slotsTable'><tr><th></th><th>Floor Name</th><th>Slot Number</th></tr>";
           for(index = 0; index < data.parking_lots.length; index++) {
             resultData += "<tr><td><input type='radio' value='lot" + index + "' name='lot'/></td><td class='floors'>" + data.parking_lots[index].floor_name + "</td><td class='slots'>" + data.parking_lots[index].slot_number + "</td></tr>";
@@ -112,12 +124,29 @@
         },
 
         error: function (jqXHR, status) {
-          alert("Error:" + status);
+          // alert("Error:" + status);
+          window.location = "/";
         }
       });
       return false;
     });
 
+    $('#floor_name').focus(function() {
+      $.ajax({
+        type: "GET",
+        url: "http://localhost:3000/api/getFloors",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify(sendInfo),
+        success: function (data, status, jqXHR) {
+          alert(JSON.stringify(data));
+        },
+
+        error: function (jqXHR, status) {
+          alert("Error:" + status);
+        }
+      });
+    });
   });
 
   // Call booking service
@@ -127,6 +156,7 @@
 
     // alert(document.getElementById('userEmail').innerHTML);
     var sendInfo = {
+      token : document.getElementById('userToken').innerHTML,
       email : document.getElementById('userEmail').innerHTML,
       floor_name : selectedFloor,
       slot_number : selectedSlot,
@@ -143,7 +173,10 @@
       dataType: "json",
       data: JSON.stringify(sendInfo),
       success: function (data, status, jqXHR) {
-        window.location ="http://localhost:3000/profile";
+        if(data.status == 302)
+          window.location = data.redirect;
+        else
+          window.location = "http://localhost:3000/profile";
       },
 
       error: function (jqXHR, status) {
