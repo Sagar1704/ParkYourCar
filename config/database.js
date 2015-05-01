@@ -3,6 +3,6 @@
 // mongodb in server.js
 module.exports = {
 			// looks like mongodb://<user>:<pass>@mongo.onmodulus.net:27017/<database>
-    'url' : 'mongodb://localhost:40001/parkyourcar'
+    'url' : 'mongodb://Sagar:27000/parkyourcar'
 
 };

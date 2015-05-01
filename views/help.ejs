@@ -1,9 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Park Your Car - Help</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<img alt="Brand" src="/images/lamborgini.jpg" style="width:50px;height:50px">
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="/login">Login</a></li>
+					<li><a href="/signup">Signup</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Park Your Car</h1>
+			<p>Cool website to help you park your Car!!</p> 
+		</div>
+		<div class="btn-group btn-group-justified" role="group" aria-label="...">
+			<div class="btn-group" role="group">
+				<button type="button" id= "b1" class="btn btn-default">About Us</button>
+			</div>
+			<div class="btn-group" role="group">
+				<button type="button" id= "b2" class="btn btn-default">How to Use?</button>
+			</div>
+			<div class="btn-group" role="group">
+				<button type="button" id= "b3" class="btn btn-default">FAQ's</button>
+			</div>
+		</div>
+		<div class="jumbotron" id="about">
+			<h2>This Project is done as an assignment of WPL @ UTD under the Guidance of Prof.Mithun Balakrishna</h2>
+			<p>Akshay Thakare(ast140230@utdallas.edu)</p>
+			<p>Aniket Rahate(axr138430@utdallas.edu)</p>
+			<p>Sagar Deshpande(ssd140830@utdallas.edu)</p> 
+		</div>
+		<div class="jumbotron" id = "use">
+			<h2>How to Use?</h2>
+			<p>1. Login into our system using new registration or your Google or Facebook credentials!!!</p>
+			<p>2. Search for available parking space from three categories: Red(10$/hr), Blue(7$/hr), Green(5$/hr)</p>
+			<p>3. You can check your booked slots by going to your profile page</p>
+			<p>4. You can also cancel the bookings by a single click!!!</p>
+		</div>
+		<div class="jumbotron" id = "faq">
+			<h2>FAQ's</h2>
+			<p>Que 1)What is the difference in various categories(Red, Blue, Green)?</p>
+			<p>Ans)<h3><ol><li>Red: Parking + Washing + Insurance + Wallet Service</li><li>Blue: Parking + Wallet Service</li><li>Green: Parking only</li></ol></h3></p>
+		</div> 
+	</div>
+	<script>
+		$(document).ready(function(){
+			$("#use").hide();
+			$("#faq").hide();
+			
+			$("#b1").click(function(){
+				$("#about").show();
+				$("#use").hide();
+				$("#faq").hide();
+			});
+			
+			$("#b2").click(function(){
+				$("#about").hide();
+				$("#use").show();
+				$("#faq").hide();
+			});
+			
+			$("#b3").click(function(){
+				$("#about").hide();
+				$("#use").hide();
+				$("#faq").show();
+			});
+		});
+		
+	</script>
 </body>
 </html>

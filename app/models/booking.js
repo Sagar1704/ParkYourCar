@@ -7,7 +7,7 @@ var bookingSchema = new mongoose.Schema({
 	slot_number : String,
 	checkin_time : Date,
 	checkout_time : Date
-});
+}, { shardKey: { floor_name : 1}});
 
 // methods ======================
 

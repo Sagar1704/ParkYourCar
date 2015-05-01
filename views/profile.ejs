@@ -168,7 +168,7 @@
                   // alert(JSON.stringify(data));
                   var resultData = "<table id='slotsTable'><tr><th></th><th>Floor Name</th><th>Slot Number</th><th>Checkin Time</th><th>Checkout Time</th></tr>";
                   for(index = 0; index < data.bookings.length; index++) {
-                    resultData += "<tr><td align='center' class='button'><button class='cancelButton' type='button' name='lot'><span class='glyphicon glyphicon-remove-circle'></span></button></td><td class='floors'>" + data.bookings[index].floor_name + "</td><td class='slots'>" + data.bookings[index].slot_number + "</td><td class='checkin'>" + data.bookings[index].checkin_time.split("T")[0] + "</br>" + data.bookings[index].checkin_time.split("T")[1].split(":00.")[0] + "</td><td class='checkout'>" + data.bookings[index].checkout_time.split("T")[0] + "</br>" + data.bookings[index].checkout_time.split("T")[1].split(":00.")[0]  + "</td></tr>";
+                    resultData += "<tr><td align='center' class='button'><button class='cancelButton' type='button' name='lot'><span class='glyphicon glyphicon-remove-circle'></span></button></td><td class='floors'>" + data.bookings[index].floor_name + "</td><td class='slots'>" + data.bookings[index].slot_number + "</td><td class='checkin'>" + data.bookings[index].checkin_time + "</td><td class='checkout'>" + data.bookings[index].checkout_time + "</td></tr>";
                     }
 
                 $(document).on('DOMNodeInserted', function(e) { $(e.target).addClass("table table-bordered table-striped table-condensed table-hover table-even-widths"); });
